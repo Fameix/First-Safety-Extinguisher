@@ -113,7 +113,7 @@ const Footer = () => {
                 </a>
 
                 <p className="text-base font-normal text-muted-foreground">
-                  Empowering businesses with innovative solutions. Let's create
+                  Empowering businesses with innovative solutions. Let&apos;s create
                   something amazing together.
                 </p>
 
