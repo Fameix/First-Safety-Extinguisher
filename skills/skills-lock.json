@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "iterative-retrieval": {
+      "source": "affaan-m/everything-claude-code",
+      "sourceType": "github",
+      "skillPath": "skills/iterative-retrieval/SKILL.md",
+      "computedHash": "b85704f45bf87fa97017a51d2aff85a75bb40a81d64d6de1994c82bec1debc09"
+    }
+  }
+}
