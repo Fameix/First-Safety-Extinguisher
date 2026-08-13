@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
+import { Container } from "@/components/site/container"
+
 export function CTASection({
   title = "Need Reliable Fire Safety Solutions?",
   description = "Talk to Aulukya for practical support across fire protection, safety equipment, maintenance, audits, and Fire NOC consulting.",
@@ -18,11 +20,11 @@ export function CTASection({
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_36%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_28%)]"
       />
-      <div className="relative mx-auto flex min-h-[300px] max-w-6xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-20">
+      <Container className="relative flex min-h-[300px] flex-col items-center justify-center py-16 text-center lg:py-20">
         <p className="text-[11px] font-semibold uppercase tracking-[0.42em] text-[#ff5a4f]">
           READY WHEN YOU ARE
         </p>
-        <h2 className="mt-5 max-w-5xl text-4xl font-semibold tracking-[-0.04em] text-balance sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[0.95]">
+        <h2 className="mt-5 max-w-none text-4xl font-semibold tracking-[-0.04em] text-balance sm:text-5xl md:text-6xl lg:text-[4.25rem] lg:leading-[0.95]">
           {title}
         </h2>
         <p className="mt-6 max-w-3xl text-sm leading-7 text-white/88 sm:text-base">
@@ -35,7 +37,7 @@ export function CTASection({
           {label}
           <ArrowRight className="size-4" aria-hidden="true" />
         </Link>
-      </div>
+      </Container>
     </section>
   )
 }

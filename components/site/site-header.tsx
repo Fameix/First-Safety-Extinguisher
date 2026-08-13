@@ -19,6 +19,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { SiteLogo } from "@/components/site/site-logo"
+import { Container } from "@/components/site/container"
 import { navLinks, services } from "@/lib/site-data"
 import { cn } from "@/lib/utils"
 
@@ -34,8 +35,8 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-3 z-50 px-3 sm:px-4">
-      <div className="mx-auto w-full max-w-7xl">
+    <header className="sticky top-3 z-50">
+      <Container>
         <div className="flex items-center justify-between gap-3 rounded-full border border-border/40 bg-background/70 px-4 py-2.5 shadow-2xl shadow-primary/5 backdrop-blur-xl sm:px-5 lg:gap-6 lg:px-6">
           <Link href="/" className="flex shrink-0 items-center leading-none" aria-label="Aulukya home">
             <SiteLogo priority className="block h-11 w-auto sm:h-12 lg:h-14" />
@@ -55,9 +56,6 @@ export function SiteHeader() {
                           <div key={service.href}>
                             <Link href={service.href} className="block rounded-xl p-3 hover:bg-accent">
                               <div className="text-base font-medium">{service.title}</div>
-                              <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                                {service.description}
-                              </p>
                             </Link>
                           </div>
                         ))}
@@ -91,14 +89,14 @@ export function SiteHeader() {
                 "group h-11 rounded-full px-5 text-sm font-medium shadow-none transition-all hover:ps-6 hover:pe-4"
               )}
             >
-              Get a Quote
+              Free Consultation
               <ArrowUpRight className="size-4 transition-transform group-hover:rotate-45" />
             </Link>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
             <Link href="/contact" className={cn(buttonVariants({ size: "sm" }), "rounded-full px-4")}>
-              Quote
+              Free Consultation
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background text-foreground outline-none transition-colors hover:bg-muted">
@@ -131,7 +129,7 @@ export function SiteHeader() {
             </DropdownMenu>
           </div>
         </div>
-      </div>
+      </Container>
     </header>
   )
 }

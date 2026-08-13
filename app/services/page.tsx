@@ -84,10 +84,10 @@ export default function Page() {
         title="Complete Fire & Safety Solutions"
         description="Fire safety services in Chennai for businesses and organizations, delivered through focused support across equipment, systems, maintenance, audits and consulting."
         image="/home-hero-banner.png"
-        primary={{ label: "Get a Consultation", href: "/contact" }}
-        secondary={{ label: "Back to Home", href: "/" }}
+        primary={{ label: "Book a Free Consultation", href: "/contact" }}
+        secondary={{ label: "Call Us Now", href: "tel:+919003012345" }}
       />
-      <section className="py-16">
+      <section className="section-surface py-16">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
@@ -118,13 +118,13 @@ export default function Page() {
           </div>
           <div className="mt-10 flex justify-center">
             <Link href="/contact" className={buttonVariants()}>
-              Talk to Our Team <ArrowRight aria-hidden="true" />
+              Book a Free Consultation <ArrowRight aria-hidden="true" />
             </Link>
           </div>
         </Container>
       </section>
       <CTASection
-        title="Need Reliable Fire Safety Solutions?"
+        title="Need reliable fire safety solutions?"
         description="Talk to our experts today for your fire safety needs and compliance support."
         label="Contact Us"
         href="/contact"

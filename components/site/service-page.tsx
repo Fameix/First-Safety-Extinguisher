@@ -28,7 +28,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         eyebrow={content.keyword}
         title={content.title}
         description={content.description}
-        primary={{ label: "Get a Consultation", href: "/contact" }}
+        primary={{ label: "Book a Free Consultation", href: "/contact" }}
         secondary={{ label: "View All Services", href: "/services" }}
         image={content.image}
       />

@@ -16,12 +16,14 @@ export default function Page() {
         title="Privacy Policy"
         description="This page can be updated with the company's approved privacy policy."
       />
-      <section className="py-16">
-        <Container className="max-w-3xl text-base leading-8 text-muted-foreground">
+      <section className="section-surface py-16">
+        <Container>
+          <div className="max-w-3xl text-base leading-8 text-muted-foreground">
           <p>
             Formal privacy policy content has not been provided. This placeholder avoids adding unapproved legal
             terms while keeping the website route available.
           </p>
+          </div>
         </Container>
       </section>
     </>

@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button"
 
 export default function NotFound() {
   return (
-    <section className="py-24">
+    <section className="section-surface py-24">
       <Container>
         <p className="text-sm font-medium uppercase text-primary">404</p>
         <h1 className="mt-4 text-4xl font-medium tracking-normal">Page not found</h1>

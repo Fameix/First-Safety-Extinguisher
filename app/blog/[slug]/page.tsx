@@ -33,7 +33,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <section className="border-b bg-muted/30 py-10">
+      <section className="section-surface-alt py-10">
         <Container>
           <Breadcrumb>
             <BreadcrumbList>

@@ -23,6 +23,7 @@ import {
 } from "lucide-react"
 
 import { Container } from "@/components/site/container"
+import { CTASection } from "@/components/site/cta-section"
 import { IconBadge } from "@/components/site/icon-badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -131,8 +132,7 @@ const projects = [
       "Complete fire alarm system installation including smoke detectors, manual call points, alarm panels and notification devices for reliable early fire detection.",
     services:
       "Fire alarm installation \u00b7 Smoke detection \u00b7 Alarm panel setup \u00b7 Testing & commissioning",
-    image:
-      "https://images.pexels.com/photos/25020272/pexels-photo-25020272.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: "/project-fire-alarm-installation.jpg",
   },
   {
     title: "Hydrant System Works",
@@ -141,8 +141,7 @@ const projects = [
       "Complete fire hydrant system design and installation providing reliable water-based fire protection across critical industrial areas.",
     services:
       "Fire hydrant installation \u00b7 Fire piping \u00b7 Hose reel systems \u00b7 Testing & commissioning",
-    image:
-      "https://images.pexels.com/photos/37352142/pexels-photo-37352142.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: "/project-hydrant-system-works.jpg",
   },
   {
     title: "Fire Safety Maintenance Service",
@@ -151,8 +150,7 @@ const projects = [
       "Comprehensive fire safety maintenance covering critical equipment and systems to ensure reliable performance and workplace safety.",
     services:
       "Fire safety inspection \u00b7 Preventive maintenance \u00b7 Equipment servicing \u00b7 Safety compliance",
-    image:
-      "https://images.pexels.com/photos/8978625/pexels-photo-8978625.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: "/project-fire-safety-maintenance.jpg",
   },
 ]
 
@@ -280,7 +278,7 @@ export default function Page() {
                   "h-12 w-full rounded-lg px-6 sm:w-auto"
                 )}
               >
-                Get a Free Consultation <ArrowRight aria-hidden="true" />
+                Book a Free Consultation <ArrowRight aria-hidden="true" />
               </Link>
               <Link
                 href="tel:+919003012345"
@@ -295,8 +293,8 @@ export default function Page() {
           </div>
         </Container>
 
-        <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-zinc-950/65 backdrop-blur-md">
-          <Container className="grid grid-cols-2 divide-x divide-white/10 sm:grid-cols-4">
+        <div className="absolute inset-x-0 bottom-0 bg-zinc-950/65 backdrop-blur-md">
+          <Container className="grid grid-cols-2 sm:grid-cols-4">
             {["Supply", "Installation", "Maintenance", "Compliance"].map(
               (item) => (
                 <div
@@ -312,7 +310,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-24 lg:py-32">
+      <section className="section-surface py-20 sm:py-24 lg:py-32">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
           <div className="relative order-1 aspect-[4/3] overflow-hidden rounded-2xl bg-muted lg:order-2">
             <Image
@@ -322,14 +320,6 @@ export default function Page() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute bottom-5 left-5 rounded-xl bg-zinc-950 px-5 py-4 text-white shadow-2xl sm:bottom-7 sm:left-7">
-              <p className="font-heading text-3xl font-semibold text-red-500">
-                15+
-              </p>
-              <p className="mt-1 text-xs font-semibold tracking-[0.16em] text-white/70 uppercase">
-                Years experience
-              </p>
-            </div>
           </div>
           <div className="order-2 lg:order-1">
             <SectionIntro
@@ -337,7 +327,7 @@ export default function Page() {
               title="Trusted fire & safety solutions in Chennai"
               copy="Aulukya helps businesses protect people, property and operations with dependable fire protection, safety equipment, installation, maintenance and compliance support."
             />
-            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t pt-6 text-sm font-semibold">
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 pt-6 text-sm font-semibold">
               <span className="flex items-center gap-2">
                 <Check className="size-4 text-primary" /> Practical guidance
               </span>
@@ -426,7 +416,7 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24 lg:py-32">
+      <section className="section-surface py-20 sm:py-24 lg:py-32">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
           <div className="order-2 lg:order-1">
             <SectionIntro
@@ -439,7 +429,7 @@ export default function Page() {
                 const Icon = benefit.icon
 
                 return (
-                <div key={benefit.title} className="border-t pt-5">
+                <div key={benefit.title} className="pt-5">
                   <div className="flex items-center gap-3">
                     <IconBadge size="sm" className="bg-red-50 text-red-600">
                       <Icon className="size-4" aria-hidden="true" />
@@ -468,7 +458,7 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="border-y bg-muted/45 py-20 sm:py-24 lg:py-28">
+      <section className="section-surface-alt py-20 sm:py-24 lg:py-28">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
@@ -497,7 +487,7 @@ export default function Page() {
                 return (
                   <div
                     key={industry.label}
-                    className="flex items-center gap-4 border-b py-5 sm:py-6"
+                    className="flex items-center gap-4 py-5 sm:py-6"
                   >
                     <IconBadge size="sm">
                       <Icon className="size-5" aria-hidden="true" />
@@ -515,7 +505,7 @@ export default function Page() {
 
       <section
         id="projects"
-        className="overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+        className="section-surface overflow-hidden py-20 sm:py-24 lg:py-28"
       >
         <Container>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -585,32 +575,12 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[linear-gradient(110deg,#050505_0%,#190505_24%,#650b0b_65%,#dc1717_100%)] py-8 text-white sm:py-10 lg:py-12">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.07),transparent_42%)]" />
-        <Container className="flex flex-col items-center text-center">
-          <div className="flex max-w-5xl flex-col items-center gap-2 sm:gap-3">
-            <p className="text-xs font-bold tracking-[0.22em] text-red-400 uppercase">
-              Ready when you are
-            </p>
-            <h2 className="font-heading text-4xl leading-tight font-semibold tracking-[-0.035em] text-balance sm:text-5xl lg:text-[3.5rem]">
-              Need reliable fire safety solutions?
-            </h2>
-            <p className="max-w-4xl text-base leading-6 text-white/72">
-              We&apos;re here to help you keep what matters safe with clear,
-              responsible fire safety support in Chennai.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "mt-5 h-12 rounded-lg px-6"
-            )}
-          >
-            Call Us Today <ArrowRight aria-hidden="true" />
-          </Link>
-        </Container>
-      </section>
+      <CTASection
+        title="Need reliable fire safety solutions?"
+        description="We&apos;re here to help you keep what matters safe with clear, responsible fire safety support in Chennai."
+        label="Call Us Today"
+        href="/contact"
+      />
     </>
   )
 }

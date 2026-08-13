@@ -26,7 +26,7 @@ export default function Page() {
         description="Useful articles on fire protection, maintenance, audits, alarm systems, and safer business environments."
         image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=80"
       />
-      <section className="py-16">
+      <section className="section-surface py-16">
         <Container className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <Card className="overflow-hidden rounded-lg">
             <div className="aspect-[16/9] bg-cover bg-center" style={{ backgroundImage: `url(${featured.image})` }} role="img" aria-label={featured.title} />
