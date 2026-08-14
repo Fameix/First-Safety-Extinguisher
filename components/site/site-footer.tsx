@@ -52,8 +52,8 @@ export function SiteFooter() {
   const isHomePage = pathname === "/"
 
   return (
-    <footer className="bg-white py-10 text-zinc-950">
-      <Container className="max-w-7xl">
+    <footer className="bg-zinc-50 py-10 text-zinc-950">
+      <Container>
         <div className="flex flex-col gap-6 sm:gap-12">
           <div
             className={[

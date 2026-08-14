@@ -1,0 +1,341 @@
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, Phone, type LucideIcon } from "lucide-react"
+
+import { Container } from "@/components/site/container"
+import { CTASection } from "@/components/site/cta-section"
+import { FAQShowcase } from "@/components/site/faq-showcase"
+import { IconBadge } from "@/components/site/icon-badge"
+import {
+  ReadinessChecklist,
+  type ChecklistItem,
+} from "@/components/site/readiness-checklist"
+import { buttonVariants } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BOOKING_URL } from "@/lib/booking"
+import { cn } from "@/lib/utils"
+
+export type DetailedServiceContent = {
+  hero: {
+    eyebrow: string
+    title: string
+    accent: string
+    description: string
+    image: string
+    imageAlt: string
+  }
+  intro: {
+    eyebrow: string
+    title: string
+    description: string
+    image: string
+    imageAlt: string
+    highlights: { title: string; icon: LucideIcon }[]
+  }
+  services: {
+    eyebrow: string
+    title: string
+    description: string
+    items: { title: string; text: string; icon: LucideIcon; image?: string }[]
+  }
+  checklist: { eyebrow: string; title: string; items: ChecklistItem[] }
+  process: { title: string; text: string; icon: LucideIcon }[]
+  feature: {
+    eyebrow: string
+    title: string
+    description: string
+    items: { title: string; text: string; image: string }[]
+  }
+  faqs: { question: string; answer: string }[]
+  cta: { title: string; description: string }
+}
+
+function SectionIntro({
+  eyebrow,
+  title,
+  copy,
+  light = false,
+}: {
+  eyebrow: string
+  title: string
+  copy?: string
+  light?: boolean
+}) {
+  return (
+    <div className={cn("max-w-2xl", light && "text-zinc-950")}>
+      <p
+        className={cn(
+          "flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase before:h-px before:w-8 before:bg-primary",
+          light ? "text-red-600" : "text-primary"
+        )}
+      >
+        {eyebrow}
+      </p>
+      <h2 className="mt-4 font-heading text-3xl leading-tight font-semibold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+      {copy ? (
+        <p
+          className={cn(
+            "mt-5 text-base leading-7",
+            light ? "text-zinc-600" : "text-muted-foreground"
+          )}
+        >
+          {copy}
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
+export function DetailedServicePage({
+  content,
+}: {
+  content: DetailedServiceContent
+}) {
+  return (
+    <>
+      <section className="relative isolate -mt-[88px] min-h-[760px] overflow-hidden bg-zinc-950 pt-[88px] text-white lg:min-h-[850px]">
+        <Image
+          src={content.hero.image}
+          alt={content.hero.imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover object-[72%_center] sm:object-[65%_center] lg:object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(9,9,11,0.97)_0%,rgba(9,9,11,0.86)_36%,rgba(9,9,11,0.34)_68%,rgba(9,9,11,0.12)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-zinc-950/90 to-transparent" />
+        <Container className="flex min-h-[672px] items-start pt-[195px] pb-16 sm:pt-[195px] lg:min-h-[762px] lg:pt-[250px] lg:pb-20">
+          <div className="max-w-3xl animate-in duration-700 fade-in slide-in-from-bottom-4">
+            <p className="flex items-center gap-3 text-xs font-bold tracking-[0.22em] text-red-400 uppercase before:h-px before:w-10 before:bg-red-500">
+              {content.hero.eyebrow}
+            </p>
+            <h1 className="mt-6 max-w-3xl font-heading text-5xl leading-[0.98] font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
+              {content.hero.title}{" "}
+              <span className="text-red-500">{content.hero.accent}</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-7 text-white/72 sm:text-lg">
+              {content.hero.description}
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-12 w-full rounded-lg px-6 sm:w-auto"
+                )}
+              >
+                Book a Free Consultation <ArrowRight aria-hidden="true" />
+              </Link>
+              <Link
+                href="tel:+919003012345"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "h-12 w-full rounded-lg border-white/25 bg-white/5 px-6 text-white backdrop-blur-sm hover:bg-white hover:text-zinc-950 sm:w-auto"
+                )}
+              >
+                <Phone aria-hidden="true" /> Call Us Now
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className="section-surface py-20 sm:py-24 lg:py-32">
+        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+          <div>
+            <SectionIntro
+              eyebrow={content.intro.eyebrow}
+              title={content.intro.title}
+              copy={content.intro.description}
+            />
+            <div className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-1 md:grid-cols-2">
+              {content.intro.highlights.map(({ title, icon: Icon }) => (
+                <div
+                  key={title}
+                  className="flex w-full min-w-0 items-center gap-4 text-left text-sm leading-6 font-medium text-zinc-900 sm:text-base"
+                >
+                  <IconBadge size="lg" className="shadow-sm">
+                    <Icon className="size-5" aria-hidden="true" />
+                  </IconBadge>
+                  <span>{title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
+            <Image
+              src={content.intro.image}
+              alt={content.intro.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </Container>
+      </section>
+      <section className="section-surface-alt py-20 text-zinc-950 sm:py-24 lg:py-32">
+        <Container>
+          <SectionIntro
+            light
+            eyebrow={content.services.eyebrow}
+            title={content.services.title}
+            copy={content.services.description}
+          />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {content.services.items.map(({ title, text, icon: Icon, image }) => (
+              <Card
+                key={title}
+                borderless
+                className="min-h-56 rounded-2xl border border-zinc-200 bg-white p-7 text-zinc-950 shadow-sm transition-colors hover:border-red-200"
+              >
+                <CardHeader className="p-0">
+                  {image ? (
+                    <div className="relative size-16">
+                      <Image
+                        src={image}
+                        alt={`${title} 3D illustration`}
+                        fill
+                        sizes="64px"
+                        className={cn(
+                          "object-contain",
+                          image.startsWith("/assets/images/fire_alarm_") &&
+                            "scale-[1.3]"
+                        )}
+                      />
+                    </div>
+                  ) : (
+                    <IconBadge
+                      size="sm"
+                      className="bg-red-50 text-red-600 shadow-none ring-1 ring-red-100"
+                    >
+                      <Icon className="size-4" />
+                    </IconBadge>
+                  )}
+                  <CardTitle className="mt-6 text-xl text-zinc-950">
+                    {title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">{text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+      <section className="section-surface py-20 sm:py-24 lg:py-32">
+        <Container>
+          <ReadinessChecklist
+            items={content.checklist.items}
+            eyebrow={content.checklist.eyebrow}
+            title={content.checklist.title}
+          />
+        </Container>
+      </section>
+      <section className="section-surface-alt py-20 text-zinc-950 sm:py-24 lg:py-28">
+        <Container>
+          <div className="max-w-4xl">
+            <SectionIntro
+              eyebrow="Our process"
+              title="A clear path from enquiry to service."
+            />
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:items-stretch">
+            {content.process.map(({ title, text, icon: Icon }, index) => (
+              <Card
+                key={title}
+                borderless
+                className="group relative flex h-full min-h-[20rem] flex-col justify-between overflow-hidden rounded-[1.5rem] border border-zinc-200 bg-white px-7 py-7 shadow-none transition-colors duration-300 hover:border-red-200 sm:min-h-[21rem] lg:px-8 lg:py-8"
+              >
+                <span className="absolute top-5 right-5 text-[clamp(3.5rem,9vw,6rem)] font-semibold tracking-[-0.08em] text-zinc-950/[0.05] select-none">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="relative z-10 flex h-full flex-col">
+                  <div className="flex size-14 items-center justify-center rounded-full bg-red-50 text-red-600">
+                    <Icon className="size-5" aria-hidden="true" />
+                  </div>
+                  <div className="mt-auto pt-20">
+                    <h3 className="font-heading text-[1.45rem] leading-tight font-semibold tracking-[-0.04em] text-zinc-950 lg:text-[1.55rem]">
+                      {title}
+                    </h3>
+                    <p className="mt-4 max-w-sm text-sm leading-7 text-zinc-600">
+                      {text}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+      <section className="section-surface py-16">
+        <Container>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-6xl">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-8 bg-[#d50707]" />
+                <p className="text-xs font-bold tracking-[0.25em] text-[#d50707] uppercase">
+                  {content.feature.eyebrow}
+                </p>
+              </div>
+              <h2 className="mt-5 font-heading text-4xl leading-none font-semibold tracking-[-0.04em] text-zinc-950 sm:text-5xl lg:text-[4rem]">
+                {content.feature.title}
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
+                {content.feature.description}
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "h-12 rounded-2xl bg-[#d50707] px-6 text-white shadow-none hover:bg-[#b80505]"
+              )}
+            >
+              Ask for guidance <ArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:mt-16 xl:grid-cols-3">
+            {content.feature.items.map((item) => (
+              <Link
+                key={item.title}
+                href="/contact"
+                className="group block h-full focus-visible:outline-none"
+              >
+                  <div className="relative isolate h-full min-h-[320px] overflow-hidden rounded-[24px] bg-white text-white shadow-[0_24px_50px_-30px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                  <div className="relative flex h-full flex-col justify-end p-6 sm:p-7">
+                    <h3 className="font-heading text-2xl leading-tight font-semibold tracking-tight text-white sm:text-[2rem]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-white/88">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+      <CTASection
+        title={content.cta.title}
+        description={content.cta.description}
+        label="Book a Free Consultation"
+        href={BOOKING_URL}
+        external
+      />
+      <FAQShowcase items={content.faqs} />
+    </>
+  )
+}

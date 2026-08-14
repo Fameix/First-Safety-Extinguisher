@@ -2,22 +2,24 @@ import Image from "next/image"
 import Link from "next/link"
 import {
   ArrowRight,
-  BadgeCheck,
-  Check,
   ClipboardCheck,
-  Gauge,
-  Hammer,
-  PackageCheck,
-  RefreshCw,
+  Headset,
   ShieldCheck,
-  Truck,
+  Target,
+  MessageSquare,
+  SearchCheck,
+  Phone,
+  Wrench,
 } from "lucide-react"
 
 import { Container } from "@/components/site/container"
-import { FAQAccordion } from "@/components/site/faq-accordion"
+import { CTASection } from "@/components/site/cta-section"
+import { FAQShowcase } from "@/components/site/faq-showcase"
 import { IconBadge } from "@/components/site/icon-badge"
+import { ReadinessChecklist } from "@/components/site/readiness-checklist"
 import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BOOKING_URL } from "@/lib/booking"
 import { pageMetadata } from "@/lib/site-data"
 import { cn } from "@/lib/utils"
 
@@ -28,33 +30,110 @@ export const metadata = pageMetadata(
 )
 
 const services = [
-  { title: "Inspection", text: "Detailed checks for condition, placement, access and service status.", icon: ClipboardCheck },
-  { title: "Maintenance", text: "Preventive service that keeps every unit dependable and ready.", icon: Hammer },
-  { title: "Refill", text: "Prompt refilling after discharge or when an extinguisher needs recharging.", icon: RefreshCw },
-  { title: "Testing", text: "Pressure and performance checks handled with clear service records.", icon: Gauge },
-  { title: "Replacement", text: "Practical recommendations for damaged, expired or unsuitable units.", icon: ShieldCheck },
-  { title: "Supply", text: "Workplace-ready extinguishers selected around your site and risk profile.", icon: PackageCheck },
+  {
+    title: "Inspection",
+    text: "Regular inspection to ensure extinguishers are accessible, properly mounted, clearly identified and ready for use.",
+    image: "/images/services/extinguisher/inspection.png",
+  },
+  {
+    title: "Maintenance",
+    text: "Professional maintenance to keep fire extinguishers reliable, functional and in good working condition.",
+    image: "/images/services/extinguisher/maintenance.png",
+  },
+  {
+    title: "Refill",
+    text: "Timely refilling of extinguishing agents to restore protection after use or when required.",
+    image: "/images/services/extinguisher/refill.png",
+  },
+  {
+    title: "Testing",
+    text: "Routine testing and pressure checks to help ensure fire extinguishers perform safely and effectively.",
+    image: "/images/services/extinguisher/testing.png",
+  },
+  {
+    title: "Replacement",
+    text: "Replacement of damaged, expired or unreliable extinguishers with suitable fire protection equipment.",
+    image: "/images/services/extinguisher/replacement.png",
+  },
+  {
+    title: "Supply",
+    text: "Reliable supply of fire extinguishers selected to match your workplace and fire protection requirements.",
+    image: "/images/services/extinguisher/supply.png",
+  },
 ]
 
 const extinguisherTypes = [
-  { title: "ABC Dry Powder", text: "For common workplace fire risks across offices, stores and facilities." },
-  { title: "CO₂ Extinguishers", text: "A clean-agent option for electrical equipment and sensitive work areas." },
-  { title: "Foam Extinguishers", text: "Suitable support for flammable liquid risks when specified for the site." },
+  {
+    title: "ABC Dry Powder",
+    text: "For common workplace fire risks across offices, stores and facilities.",
+  },
+  {
+    title: "CO₂ Extinguishers",
+    text: "A clean-agent option for electrical equipment and sensitive work areas.",
+  },
+  {
+    title: "Foam Extinguishers",
+    text: "Suitable support for flammable liquid risks when specified for the site.",
+  },
 ]
 
 const faqs = [
-  { question: "How often should fire extinguishers be serviced?", answer: "Extinguishers should be visually checked regularly and serviced on a planned schedule based on their condition, environment and applicable requirements. We can help establish a practical maintenance plan for your site." },
-  { question: "Do you provide fire extinguisher refilling in Chennai?", answer: "Yes. Aulukya supports extinguisher refilling, servicing and follow-up for businesses and organizations across Chennai." },
-  { question: "Can you service all extinguisher types?", answer: "We review the make, type, condition and application of each unit before recommending the appropriate service or replacement path." },
-  { question: "Will I receive service documentation?", answer: "Yes. Service scope and recommendations are shared clearly so your team can keep maintenance records current." },
+  {
+    question: "How often should fire extinguishers be serviced?",
+    answer:
+      "Extinguishers should be visually checked regularly and serviced on a planned schedule based on their condition, environment and applicable requirements. We can help establish a practical maintenance plan for your site.",
+  },
+  {
+    question: "Do you provide fire extinguisher refilling in Chennai?",
+    answer:
+      "Yes. Aulukya supports extinguisher refilling, servicing and follow-up for businesses and organizations across Chennai.",
+  },
+  {
+    question: "Can you service all extinguisher types?",
+    answer:
+      "We review the make, type, condition and application of each unit before recommending the appropriate service or replacement path.",
+  },
+  {
+    question: "Will I receive service documentation?",
+    answer:
+      "Yes. Service scope and recommendations are shared clearly so your team can keep maintenance records current.",
+  },
 ]
 
-function SectionIntro({ eyebrow, title, copy, light = false }: { eyebrow: string; title: string; copy?: string; light?: boolean }) {
+function SectionIntro({
+  eyebrow,
+  title,
+  copy,
+  light = false,
+}: {
+  eyebrow: string
+  title: string
+  copy?: string
+  light?: boolean
+}) {
   return (
-    <div className={cn("max-w-2xl", light && "text-white")}>
-      <p className={cn("flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase before:h-px before:w-8 before:bg-primary", light ? "text-red-400" : "text-primary")}>{eyebrow}</p>
-      <h2 className="mt-4 font-heading text-3xl leading-tight font-semibold tracking-[-0.035em] sm:text-4xl lg:text-5xl">{title}</h2>
-      {copy ? <p className={cn("mt-5 text-base leading-7", light ? "text-white/60" : "text-muted-foreground")}>{copy}</p> : null}
+    <div className={cn("max-w-2xl", light && "text-zinc-950")}>
+      <p
+        className={cn(
+          "flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase before:h-px before:w-8 before:bg-primary",
+          light ? "text-red-400" : "text-primary"
+        )}
+      >
+        {eyebrow}
+      </p>
+      <h2 className="mt-4 font-heading text-3xl leading-tight font-semibold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+      {copy ? (
+        <p
+          className={cn(
+            "mt-5 text-base leading-7",
+            light ? "text-zinc-600" : "text-muted-foreground"
+          )}
+        >
+          {copy}
+        </p>
+      ) : null}
     </div>
   )
 }
@@ -62,58 +141,278 @@ function SectionIntro({ eyebrow, title, copy, light = false }: { eyebrow: string
 export default function Page() {
   return (
     <>
-      <section className="relative isolate -mt-[88px] overflow-hidden bg-zinc-950 pt-[88px] text-white">
-        <Container className="grid min-h-[720px] items-center gap-12 py-24 lg:grid-cols-[1.02fr_0.98fr] lg:gap-20 lg:py-32">
-          <div className="max-w-3xl">
-            <p className="flex items-center gap-3 text-xs font-bold tracking-[0.22em] text-red-400 uppercase before:h-px before:w-10 before:bg-red-500">Fire Extinguisher Services</p>
-            <h1 className="mt-6 max-w-3xl font-heading text-5xl leading-[0.98] font-semibold tracking-[-0.05em] sm:text-6xl lg:text-7xl">Fire extinguishers that are <span className="text-red-500">ready when it matters.</span></h1>
-            <p className="mt-6 max-w-xl text-base leading-7 text-white/65 sm:text-lg">Inspection, maintenance, refill, testing and supply for businesses that need dependable fire protection on site.</p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-lg px-6")}>Book a Service <ArrowRight aria-hidden="true" /></Link>
-              <Link href="tel:+919003012345" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 rounded-lg border-white/20 bg-white/5 px-6 text-white hover:bg-white hover:text-zinc-950")}>Call Our Team</Link>
-            </div>
-          </div>
-          <div className="relative aspect-[0.92] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 lg:aspect-[0.9]">
-            <Image src="/home-hero-fire-extinguisher.jpeg" alt="Red fire extinguishers ready for service" fill priority sizes="(min-width: 1024px) 46vw, 100vw" className="object-cover" />
-            <div className="absolute inset-x-5 bottom-5 rounded-xl border border-white/15 bg-zinc-950/90 p-5 sm:inset-x-7 sm:bottom-7">
-              <div className="flex items-center gap-3"><IconBadge className="bg-red-950 text-red-400"><BadgeCheck className="size-5" /></IconBadge><div><p className="font-heading font-semibold">Service-ready equipment</p><p className="mt-1 text-xs text-white/55">Clear checks. Reliable support.</p></div></div>
-            </div>
-          </div>
-        </Container>
-        <div className="border-t border-white/10 bg-zinc-950"><Container className="grid grid-cols-2 divide-x divide-white/10 sm:grid-cols-4">{["Inspection", "Refilling", "Testing", "Supply"].map((item) => <div key={item} className="flex items-center justify-center gap-2 px-3 py-4 text-center text-xs font-semibold tracking-[0.14em] text-white/60 uppercase sm:py-5"><Check className="size-4 text-red-500" />{item}</div>)}</Container></div>
-      </section>
+      <section className="relative isolate -mt-[88px] min-h-[760px] overflow-hidden bg-zinc-950 pt-[88px] text-white lg:min-h-[850px]">
+        <Image
+          src="/fire-extinguisher-services-hero.png"
+          alt="Red fire extinguishers ready for service"
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover object-[72%_center] sm:object-[65%_center] lg:object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(9,9,11,0.97)_0%,rgba(9,9,11,0.86)_36%,rgba(9,9,11,0.34)_68%,rgba(9,9,11,0.12)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-zinc-950/90 to-transparent" />
 
-      <section className="py-20 sm:py-24 lg:py-32"><Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20"><div><SectionIntro eyebrow="Extinguisher care" title="A small piece of equipment with a critical job." copy="A fire extinguisher is only useful when it is correctly selected, accessible and ready to perform. Aulukya gives your team a straightforward service partner for the checks and upkeep that keep fire protection visible and dependable." /><div className="mt-8 grid gap-4 border-t pt-6 sm:grid-cols-2">{["Site-focused recommendations", "Practical service records", "Responsive Chennai support", "Business-ready scheduling"].map((item) => <p key={item} className="flex items-center gap-2 text-sm font-semibold"><Check className="size-4 text-primary" />{item}</p>)}</div></div><div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted"><Image src="/about-fire-inspection.png" alt="Technician inspecting fire safety equipment" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div></Container></section>
-
-      <section className="bg-zinc-950 py-20 text-white sm:py-24 lg:py-32"><Container><SectionIntro light eyebrow="Our extinguisher services" title="Everything your equipment needs to stay ready." copy="From a single workplace unit to a larger managed inventory, we support the full service cycle with clear communication and dependable follow-through." /><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{services.map(({ title, text, icon: Icon }) => <Card key={title} borderless className="min-h-56 rounded-2xl bg-white/[0.035] p-7 text-white shadow-none ring-1 ring-white/10 transition-colors hover:bg-white/[0.06]"><CardHeader className="p-0"><IconBadge size="md" className="bg-red-950 text-red-500"><Icon className="size-5" /></IconBadge><CardTitle className="mt-6 text-xl text-white">{title}</CardTitle></CardHeader><CardContent className="p-0"><p className="mt-3 text-sm leading-6 text-white/55">{text}</p><Link href="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-red-400">Discuss this service <ArrowRight className="size-4" /></Link></CardContent></Card>)}</div></Container></section>
-
-      <section className="py-20 sm:py-24 lg:py-32"><Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20"><div><SectionIntro eyebrow="Readiness checklist" title="Before an emergency, check the basics." copy="Use this simple checklist to spot the details that make a difference in a real moment. We can help inspect and maintain the equipment behind it." /><div className="mt-8 grid gap-3">{["Correct extinguisher type for the risk", "Visible, unobstructed and easy to reach", "Pressure gauge in the serviceable range", "Pin, seal, hose and handle in good condition", "Current inspection and service marking", "Team members know where it is and how to use it"].map((item) => <div key={item} className="flex items-center gap-3 rounded-xl border bg-card px-4 py-3 text-sm font-medium"><Check className="size-4 shrink-0 text-primary" />{item}</div>)}</div></div><div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted"><Image src="/home-why-fire-safety.png" alt="Fire safety technician working with extinguisher equipment" fill sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" /></div></Container></section>
-
-      <section className="border-y bg-muted/35 py-20 sm:py-24 lg:py-28"><Container><SectionIntro eyebrow="Our process" title="A clear path from enquiry to service." /><div className="mt-12 grid gap-4 md:grid-cols-4">{["Share your requirement", "Review the equipment", "Service or supply", "Keep it ready"].map((step, index) => <Card key={step} className="rounded-2xl bg-background"><CardHeader><span className="text-sm font-bold text-primary">0{index + 1}</span><CardTitle className="mt-4 text-xl">{step}</CardTitle></CardHeader><CardContent><p className="text-sm leading-6 text-muted-foreground">{["Tell us about your site, inventory or immediate need.", "We understand condition, type, access and maintenance history.", "We complete the agreed work with practical recommendations.", "Your team gets a clearer plan for ongoing readiness."][index]}</p></CardContent></Card>)}</div></Container></section>
-
-      <section className="py-20 sm:py-24 lg:py-32"><Container><div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"><SectionIntro eyebrow="Extinguisher types" title="The right unit for the right risk." copy="We help you choose suitable equipment for the spaces and risks present at your workplace." /><Link href="/contact" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 rounded-lg px-6")}>Ask for guidance <ArrowRight /></Link></div><div className="mt-12 grid gap-5 md:grid-cols-3">{extinguisherTypes.map((type, index) => <Card key={type.title} className="overflow-hidden rounded-2xl"><div className="relative h-44 bg-muted"><Image src={index === 0 ? "/home-service-extinguishers.jpeg" : index === 1 ? "/home-hero-equipment.png" : "/home-project-maintenance.jpeg"} alt="" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" /></div><CardHeader><CardTitle className="text-xl">{type.title}</CardTitle></CardHeader><CardContent><p className="text-sm leading-6 text-muted-foreground">{type.text}</p></CardContent></Card>)}</div></Container></section>
-
-      <section className="bg-zinc-950 py-20 text-white sm:py-24 lg:py-28">
-        <Container className="flex flex-col gap-12 lg:gap-16">
-          <Card borderless className="w-full rounded-2xl bg-primary p-8 text-white shadow-none sm:p-10">
-            <CardHeader className="p-0">
-              <IconBadge className="bg-white/15 text-white"><Truck className="size-5" /></IconBadge>
-              <CardTitle className="mt-7 text-3xl leading-tight text-white sm:text-4xl">Ready to get your extinguishers checked?</CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <p className="mt-5 leading-7 text-white/80">Tell us what your workplace needs and we&apos;ll help you plan the next step.</p>
-              <Link href="/contact" className="mt-8 inline-flex h-12 items-center gap-2 rounded-lg bg-white px-6 text-sm font-semibold text-zinc-950 transition-colors hover:bg-zinc-100">Book a Service <ArrowRight className="size-4" /></Link>
-            </CardContent>
-          </Card>
-
-          <div className="w-full">
-            <SectionIntro light eyebrow="Frequently asked" title="Straight answers for safer decisions." />
-            <div className="mt-8 w-full">
-              <FAQAccordion items={faqs} />
+        <Container className="flex min-h-[672px] items-start pt-[195px] pb-16 sm:pt-[195px] lg:min-h-[762px] lg:pt-[250px] lg:pb-20">
+          <div className="max-w-3xl animate-in duration-700 fade-in slide-in-from-bottom-4">
+            <p className="flex items-center gap-3 text-xs font-bold tracking-[0.22em] text-red-400 uppercase before:h-px before:w-10 before:bg-red-500">
+              Fire Extinguisher Services
+            </p>
+            <h1 className="mt-6 max-w-3xl font-heading text-5xl leading-[0.98] font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
+              Fire extinguishers that are{" "}
+              <span className="text-red-500">ready when it matters.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-7 text-white/72 sm:text-lg">
+              Inspection, maintenance, refill, testing and supply for businesses
+              that need dependable fire protection on site.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-12 w-full rounded-lg px-6 sm:w-auto"
+                )}
+              >
+                Book a Free Consultation <ArrowRight aria-hidden="true" />
+              </Link>
+              <Link
+                href="tel:+919003012345"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "h-12 w-full rounded-lg border-white/25 bg-white/5 px-6 text-white backdrop-blur-sm hover:bg-white hover:text-zinc-950 sm:w-auto"
+                )}
+              >
+                <Phone aria-hidden="true" /> Call Us Now
+              </Link>
             </div>
           </div>
         </Container>
       </section>
+
+      <section className="section-surface py-20 sm:py-24 lg:py-32">
+        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
+          <div>
+            <SectionIntro
+              eyebrow="Extinguisher care"
+              title="A small piece of equipment with a critical job."
+              copy="A fire extinguisher is only useful when it is correctly selected, accessible and ready to perform. Aulukya gives your team a straightforward service partner for the checks and upkeep that keep fire protection visible and dependable."
+            />
+            <div className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-1 md:grid-cols-2">
+              {[
+                { title: "Site-focused recommendations", icon: ShieldCheck },
+                { title: "Responsive Chennai support", icon: Headset },
+                { title: "Practical service records", icon: ClipboardCheck },
+                { title: "Business-ready scheduling", icon: Target },
+              ].map(({ title, icon: Icon }) => (
+                <div
+                  key={title}
+                  className="flex w-full min-w-0 items-center gap-4 text-left text-sm leading-6 font-medium text-zinc-900 sm:text-base"
+                >
+                  <IconBadge size="lg" className="shadow-sm">
+                    <Icon className="size-5" aria-hidden="true" />
+                  </IconBadge>
+                  <span>{title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
+            <Image
+              src="/about-fire-inspection.png"
+              alt="Technician inspecting fire safety equipment"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-surface-alt py-20 text-zinc-950 sm:py-24 lg:py-32">
+        <Container>
+          <SectionIntro
+            light
+            eyebrow="Fire extinguisher services"
+            title="Our Fire Extinguisher Services"
+            copy="Reliable fire extinguisher services to keep your workplace protected, compliant and ready when it matters."
+          />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map(({ title, text, image }) => (
+              <Card
+                key={title}
+                borderless
+                className="min-h-56 rounded-2xl border border-zinc-200 bg-white p-7 text-zinc-950 shadow-sm transition-colors hover:border-red-200"
+              >
+                <CardHeader className="p-0">
+                  <div className="relative size-16">
+                    <Image
+                      src={image}
+                      alt={`${title} 3D illustration`}
+                      fill
+                      sizes="64px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <CardTitle className="mt-6 text-xl text-zinc-950">
+                    {title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">{text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-surface py-20 sm:py-24 lg:py-32">
+        <Container>
+          <ReadinessChecklist />
+        </Container>
+      </section>
+
+      <section className="section-surface-alt py-20 text-zinc-950 sm:py-24 lg:py-28">
+        <Container>
+          <div className="max-w-4xl">
+            <SectionIntro
+              eyebrow="Our process"
+              title="A clear path from enquiry to service."
+            />
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:items-stretch">
+            {[
+              "Share your requirement",
+              "Review the equipment",
+              "Service or supply",
+              "Keep it ready",
+            ].map((step, index) => {
+              const icons = [
+                MessageSquare,
+                SearchCheck,
+                Wrench,
+                ShieldCheck,
+              ] as const
+              const Icon = icons[index]
+              const stepNumber = String(index + 1).padStart(2, "0")
+
+              return (
+                <Card
+                  key={step}
+                  borderless
+                  className="group relative flex h-full min-h-[20rem] flex-col justify-between overflow-hidden rounded-[1.5rem] border border-zinc-200 bg-white px-7 py-7 shadow-none transition-colors duration-300 hover:border-red-200 sm:min-h-[21rem] lg:px-8 lg:py-8"
+                >
+                  <span className="absolute top-5 right-5 text-[clamp(3.5rem,9vw,6rem)] font-semibold tracking-[-0.08em] text-zinc-950/[0.05] select-none">
+                    {stepNumber}
+                  </span>
+                  <div className="relative z-10 flex h-full flex-col">
+                    <div className="flex size-14 items-center justify-center rounded-full bg-red-50 text-red-600">
+                      <Icon className="size-5" aria-hidden="true" />
+                    </div>
+                    <div className="mt-auto pt-20">
+                      <h3 className="font-heading text-[1.45rem] leading-tight font-semibold tracking-[-0.04em] text-zinc-950 lg:text-[1.55rem]">
+                        {step}
+                      </h3>
+                      <p className="mt-4 max-w-sm text-sm leading-7 text-zinc-600">
+                        {
+                          [
+                            "Tell us about your site, inventory or immediate need.",
+                            "We understand condition, type, access and maintenance history.",
+                            "We complete the agreed work with practical recommendations.",
+                            "Your team gets a clearer plan for ongoing readiness.",
+                          ][index]
+                        }
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              )
+            })}
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-surface py-16">
+        <Container>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-6xl">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-8 bg-[#d50707]" aria-hidden="true" />
+                <p className="text-xs font-bold tracking-[0.25em] text-[#d50707] uppercase">
+                  EXTINGUISHER TYPES
+                </p>
+              </div>
+              <h2 className="mt-5 font-heading text-4xl leading-none font-semibold tracking-[-0.04em] text-zinc-950 sm:text-5xl lg:text-[4rem]">
+                The right unit for the right risk.
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
+                We help you choose suitable equipment for the spaces and risks
+                present at your workplace.
+              </p>
+            </div>
+
+            <Link
+              href="/contact"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "h-12 rounded-2xl bg-[#d50707] px-6 text-white shadow-none hover:bg-[#b80505]"
+              )}
+            >
+              Ask for guidance <ArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:mt-16 xl:grid-cols-3">
+            {extinguisherTypes.map((type, index) => (
+              <Link
+                key={type.title}
+                href="/contact"
+                className="group block h-full focus-visible:outline-none"
+              >
+                <div className="relative isolate h-full min-h-[320px] overflow-hidden rounded-[24px] bg-white text-white shadow-[0_24px_50px_-30px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_28px_58px_-28px_rgba(0,0,0,0.3)] group-focus-visible:ring-2 group-focus-visible:ring-[#d50707] group-focus-visible:ring-offset-4 group-focus-visible:ring-offset-white">
+                  <div className="absolute inset-0 bg-muted">
+                    <Image
+                      src={
+                        index === 0
+                          ? "/home-service-extinguishers.jpeg"
+                          : index === 1
+                            ? "/home-hero-equipment.png"
+                            : "/home-project-maintenance.jpeg"
+                      }
+                      alt={type.title}
+                      fill
+                      sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                  <div className="relative flex h-full min-w-0 flex-col justify-end p-6 sm:p-7">
+                    <div className="flex h-full flex-col justify-end">
+                      <h3 className="font-heading text-2xl leading-tight font-semibold tracking-tight text-white sm:text-[2rem]">
+                        {type.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-white/88">
+                        {type.text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <CTASection
+        title="Need reliable fire safety solutions?"
+        description="We're here to help you keep what matters safe with clear, responsible fire safety support in Chennai."
+        label="Call Us Today"
+        href="/contact"
+      />
+      <FAQShowcase items={faqs} />
     </>
   )
 }

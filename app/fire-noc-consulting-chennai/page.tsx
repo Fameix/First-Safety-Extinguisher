@@ -1,6 +1,6 @@
-import { ServicePage } from "@/components/site/service-page"
+import { DetailedServicePage } from "@/components/site/detailed-service-page"
 import { pageMetadata } from "@/lib/site-data"
-import { servicePages } from "@/lib/service-pages"
+import { detailedServicePages } from "@/lib/detailed-service-pages"
 
 export const metadata = pageMetadata(
   "Fire NOC Consultant in Chennai | Aulukya",
@@ -9,5 +9,5 @@ export const metadata = pageMetadata(
 )
 
 export default function Page() {
-  return <ServicePage content={servicePages.noc} />
+  return <DetailedServicePage content={detailedServicePages.noc} />
 }

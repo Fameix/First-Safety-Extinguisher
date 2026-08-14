@@ -1,19 +1,14 @@
-import { Geist_Mono, Inter, Manrope } from "next/font/google"
+import { Outfit } from "next/font/google"
 
 import "./globals.css"
 import { SiteFooter } from "@/components/site/site-footer"
 import { SiteHeader } from "@/components/site/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
 import { companyName, pageMetadata, siteUrl } from "@/lib/site-data"
 
-const manropeHeading = Manrope({subsets:['latin'],variable:'--font-heading'});
-
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-outfit",
 })
 
 export const metadata = {
@@ -34,7 +29,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, manropeHeading.variable)}
+      className={`${outfit.className} ${outfit.variable} antialiased`}
     >
       <body>
         <ThemeProvider>

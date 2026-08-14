@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import { BOOKING_URL } from "@/lib/booking"
 
 export type ServicePageContent = {
   title: string
@@ -28,11 +29,11 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         eyebrow={content.keyword}
         title={content.title}
         description={content.description}
-        primary={{ label: "Get a Consultation", href: "/contact" }}
+        primary={{ label: "Book a Free Consultation", href: BOOKING_URL, external: true }}
         secondary={{ label: "View All Services", href: "/services" }}
         image={content.image}
       />
-      <section className="py-16">
+      <section className="section-surface py-16">
         <Container className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
           <aside className="space-y-4">
             <Badge variant="secondary">Service Overview</Badge>
@@ -65,7 +66,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
         </Container>
       </section>
       {content.process ? (
-        <section className="border-y bg-muted/30 py-16">
+        <section className="section-surface-alt border-y py-16">
           <Container>
             <SectionHeading eyebrow="Process" title="A clear service process from enquiry to support." />
             <div className="mt-10 grid gap-4 md:grid-cols-4">
@@ -83,7 +84,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
           </Container>
         </section>
       ) : null}
-      <section className="py-16">
+      <section className={content.process ? "section-surface py-16" : "section-surface-alt py-16"}>
         <Container className="grid gap-10 lg:grid-cols-[1fr_0.8fr]">
           <div>
             <SectionHeading eyebrow="FAQ" title="Common questions" />
