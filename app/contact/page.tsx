@@ -32,14 +32,16 @@ export default function Page() {
         eyebrow="CONTACT US"
         title={
           <>
-            <span className="block lg:whitespace-nowrap">
-              Get fire safety support for
+            <span className="block whitespace-nowrap">
+              Get fire safety support
             </span>
-            <span className="block text-red-500">your workplace.</span>
+            <span className="block whitespace-nowrap">
+              for <span className="text-red-500">your workplace.</span>
+            </span>
           </>
         }
         description="Share your requirement and the Aulukya team can respond through the company's preferred contact process once details are connected."
-        image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80"
+        image="/contact-us-hero-banner.png"
         homeStyle
       />
       <section className="section-surface py-16">

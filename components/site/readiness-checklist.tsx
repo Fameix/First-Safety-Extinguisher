@@ -110,7 +110,7 @@ export function ReadinessChecklist({
       <div className="relative h-full min-h-[420px] overflow-hidden rounded-2xl bg-muted">
         {items.map(({ text, image }, index) => (
           <Image
-            key={image}
+            key={`${image}-${index}`}
             src={image}
             alt={text}
             fill

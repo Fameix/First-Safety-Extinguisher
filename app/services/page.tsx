@@ -17,6 +17,7 @@ import { IconBadge } from "@/components/site/icon-badge"
 import { HeroSection } from "@/components/site/hero-section"
 import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BOOKING_URL } from "@/lib/booking"
 import { pageMetadata } from "@/lib/site-data"
 
 export const metadata = pageMetadata(
@@ -84,7 +85,7 @@ export default function Page() {
         title="Complete Fire & Safety Solutions"
         description="Fire safety services in Chennai for businesses and organizations, delivered through focused support across equipment, systems, maintenance, audits and consulting."
         image="/home-hero-banner.png"
-        primary={{ label: "Book a Free Consultation", href: "/contact" }}
+        primary={{ label: "Book a Free Consultation", href: BOOKING_URL, external: true }}
         secondary={{ label: "Call Us Now", href: "tel:+919003012345" }}
       />
       <section className="section-surface py-16">
@@ -117,7 +118,12 @@ export default function Page() {
             })}
           </div>
           <div className="mt-10 flex justify-center">
-            <Link href="/contact" className={buttonVariants()}>
+            <Link
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonVariants()}
+            >
               Book a Free Consultation <ArrowRight aria-hidden="true" />
             </Link>
           </div>

@@ -3,11 +3,7 @@ import Link from "next/link"
 import {
   ArrowRight,
   ClipboardCheck,
-  Gauge,
-  Hammer,
   Headset,
-  PackageCheck,
-  RefreshCw,
   ShieldCheck,
   Target,
   MessageSquare,
@@ -23,6 +19,7 @@ import { IconBadge } from "@/components/site/icon-badge"
 import { ReadinessChecklist } from "@/components/site/readiness-checklist"
 import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BOOKING_URL } from "@/lib/booking"
 import { pageMetadata } from "@/lib/site-data"
 import { cn } from "@/lib/utils"
 
@@ -35,55 +32,108 @@ export const metadata = pageMetadata(
 const services = [
   {
     title: "Inspection",
-    text: "We inspect fire extinguishers for their condition, placement, accessibility, and service status. Regular inspections help ensure your equipment remains safe, compliant, and ready for use.",
-    icon: ClipboardCheck,
+    text: "Regular inspection to ensure extinguishers are accessible, properly mounted, clearly identified and ready for use.",
+    image: "/images/services/extinguisher/inspection.png",
   },
   {
     title: "Maintenance",
-    text: "We provide regular servicing to keep fire extinguishers reliable and in good working condition. Preventive maintenance helps ensure they are ready when needed.",
-    icon: Hammer,
+    text: "Professional maintenance to keep fire extinguishers reliable, functional and in good working condition.",
+    image: "/images/services/extinguisher/maintenance.png",
   },
   {
     title: "Refill",
-    text: "We refill fire extinguishers after discharge or when their contents need replenishing. Proper refilling helps maintain reliable protection and readiness.",
-    icon: RefreshCw,
+    text: "Timely refilling of extinguishing agents to restore protection after use or when required.",
+    image: "/images/services/extinguisher/refill.png",
   },
   {
     title: "Testing",
-    text: "We check extinguisher pressure and performance to ensure proper operation. Regular testing helps identify issues before they affect safety.",
-    icon: Gauge,
+    text: "Routine testing and pressure checks to help ensure fire extinguishers perform safely and effectively.",
+    image: "/images/services/extinguisher/testing.png",
   },
   {
     title: "Replacement",
-    text: "We identify damaged, expired, or unsuitable extinguishers that need replacement. We recommend suitable replacements based on your safety requirements.",
-    icon: ShieldCheck,
+    text: "Replacement of damaged, expired or unreliable extinguishers with suitable fire protection equipment.",
+    image: "/images/services/extinguisher/replacement.png",
   },
   {
     title: "Supply",
-    text: "We supply fire extinguishers selected according to your workplace and safety needs. Our equipment helps provide reliable protection across different environments.",
-    icon: PackageCheck,
+    text: "Reliable supply of fire extinguishers selected to match your workplace and fire protection requirements.",
+    image: "/images/services/extinguisher/supply.png",
   },
 ]
 
 const extinguisherTypes = [
-  { title: "ABC Dry Powder", text: "For common workplace fire risks across offices, stores and facilities." },
-  { title: "CO₂ Extinguishers", text: "A clean-agent option for electrical equipment and sensitive work areas." },
-  { title: "Foam Extinguishers", text: "Suitable support for flammable liquid risks when specified for the site." },
+  {
+    title: "ABC Dry Powder",
+    text: "For common workplace fire risks across offices, stores and facilities.",
+  },
+  {
+    title: "CO₂ Extinguishers",
+    text: "A clean-agent option for electrical equipment and sensitive work areas.",
+  },
+  {
+    title: "Foam Extinguishers",
+    text: "Suitable support for flammable liquid risks when specified for the site.",
+  },
 ]
 
 const faqs = [
-  { question: "How often should fire extinguishers be serviced?", answer: "Extinguishers should be visually checked regularly and serviced on a planned schedule based on their condition, environment and applicable requirements. We can help establish a practical maintenance plan for your site." },
-  { question: "Do you provide fire extinguisher refilling in Chennai?", answer: "Yes. Aulukya supports extinguisher refilling, servicing and follow-up for businesses and organizations across Chennai." },
-  { question: "Can you service all extinguisher types?", answer: "We review the make, type, condition and application of each unit before recommending the appropriate service or replacement path." },
-  { question: "Will I receive service documentation?", answer: "Yes. Service scope and recommendations are shared clearly so your team can keep maintenance records current." },
+  {
+    question: "How often should fire extinguishers be serviced?",
+    answer:
+      "Extinguishers should be visually checked regularly and serviced on a planned schedule based on their condition, environment and applicable requirements. We can help establish a practical maintenance plan for your site.",
+  },
+  {
+    question: "Do you provide fire extinguisher refilling in Chennai?",
+    answer:
+      "Yes. Aulukya supports extinguisher refilling, servicing and follow-up for businesses and organizations across Chennai.",
+  },
+  {
+    question: "Can you service all extinguisher types?",
+    answer:
+      "We review the make, type, condition and application of each unit before recommending the appropriate service or replacement path.",
+  },
+  {
+    question: "Will I receive service documentation?",
+    answer:
+      "Yes. Service scope and recommendations are shared clearly so your team can keep maintenance records current.",
+  },
 ]
 
-function SectionIntro({ eyebrow, title, copy, light = false }: { eyebrow: string; title: string; copy?: string; light?: boolean }) {
+function SectionIntro({
+  eyebrow,
+  title,
+  copy,
+  light = false,
+}: {
+  eyebrow: string
+  title: string
+  copy?: string
+  light?: boolean
+}) {
   return (
-    <div className={cn("max-w-2xl", light && "text-white")}>
-      <p className={cn("flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase before:h-px before:w-8 before:bg-primary", light ? "text-red-400" : "text-primary")}>{eyebrow}</p>
-      <h2 className="mt-4 font-heading text-3xl leading-tight font-semibold tracking-[-0.035em] sm:text-4xl lg:text-5xl">{title}</h2>
-      {copy ? <p className={cn("mt-5 text-base leading-7", light ? "text-white/60" : "text-muted-foreground")}>{copy}</p> : null}
+    <div className={cn("max-w-2xl", light && "text-zinc-950")}>
+      <p
+        className={cn(
+          "flex items-center gap-3 text-xs font-bold tracking-[0.2em] uppercase before:h-px before:w-8 before:bg-primary",
+          light ? "text-red-400" : "text-primary"
+        )}
+      >
+        {eyebrow}
+      </p>
+      <h2 className="mt-4 font-heading text-3xl leading-tight font-semibold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
+      {copy ? (
+        <p
+          className={cn(
+            "mt-5 text-base leading-7",
+            light ? "text-zinc-600" : "text-muted-foreground"
+          )}
+        >
+          {copy}
+        </p>
+      ) : null}
     </div>
   )
 }
@@ -93,7 +143,7 @@ export default function Page() {
     <>
       <section className="relative isolate -mt-[88px] min-h-[760px] overflow-hidden bg-zinc-950 pt-[88px] text-white lg:min-h-[850px]">
         <Image
-          src="/home-hero-fire-extinguisher.jpeg"
+          src="/fire-extinguisher-services-hero.png"
           alt="Red fire extinguishers ready for service"
           fill
           priority
@@ -113,12 +163,14 @@ export default function Page() {
               <span className="text-red-500">ready when it matters.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-white/72 sm:text-lg">
-              Inspection, maintenance, refill, testing and supply for
-              businesses that need dependable fire protection on site.
+              Inspection, maintenance, refill, testing and supply for businesses
+              that need dependable fire protection on site.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href="/contact"
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "h-12 w-full rounded-lg px-6 sm:w-auto"
@@ -138,7 +190,6 @@ export default function Page() {
             </div>
           </div>
         </Container>
-
       </section>
 
       <section className="section-surface py-20 sm:py-24 lg:py-32">
@@ -158,7 +209,7 @@ export default function Page() {
               ].map(({ title, icon: Icon }) => (
                 <div
                   key={title}
-                  className="flex w-full min-w-0 items-center gap-4 text-left text-sm font-medium leading-6 text-zinc-900 sm:text-base"
+                  className="flex w-full min-w-0 items-center gap-4 text-left text-sm leading-6 font-medium text-zinc-900 sm:text-base"
                 >
                   <IconBadge size="lg" className="shadow-sm">
                     <Icon className="size-5" aria-hidden="true" />
@@ -180,22 +231,71 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="bg-zinc-950 py-20 text-white sm:py-24 lg:py-32"><Container><SectionIntro light eyebrow="Our extinguisher services" title="Everything your equipment needs to stay ready." copy="From a single workplace unit to a larger managed inventory, we support the full service cycle with clear communication and dependable follow-through." /><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{services.map(({ title, text, icon: Icon }) => <Card key={title} borderless className="min-h-56 rounded-2xl bg-white/[0.035] p-7 text-white shadow-none ring-1 ring-white/10 transition-colors hover:bg-white/[0.06]"><CardHeader className="p-0"><IconBadge size="sm" className="bg-[#2a0707]/70 text-red-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"><Icon className="size-4" /></IconBadge><CardTitle className="mt-6 text-xl text-white">{title}</CardTitle></CardHeader><CardContent className="p-0"><p className="mt-3 text-sm leading-6 text-white/55">{text}</p></CardContent></Card>)}</div></Container></section>
+      <section className="section-surface-alt py-20 text-zinc-950 sm:py-24 lg:py-32">
+        <Container>
+          <SectionIntro
+            light
+            eyebrow="Fire extinguisher services"
+            title="Our Fire Extinguisher Services"
+            copy="Reliable fire extinguisher services to keep your workplace protected, compliant and ready when it matters."
+          />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map(({ title, text, image }) => (
+              <Card
+                key={title}
+                borderless
+                className="min-h-56 rounded-2xl border border-zinc-200 bg-white p-7 text-zinc-950 shadow-sm transition-colors hover:border-red-200"
+              >
+                <CardHeader className="p-0">
+                  <div className="relative size-16">
+                    <Image
+                      src={image}
+                      alt={`${title} 3D illustration`}
+                      fill
+                      sizes="64px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <CardTitle className="mt-6 text-xl text-zinc-950">
+                    {title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">{text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-      <section className="section-surface-alt py-20 sm:py-24 lg:py-32">
+      <section className="section-surface py-20 sm:py-24 lg:py-32">
         <Container>
           <ReadinessChecklist />
         </Container>
       </section>
 
-      <section className="section-surface py-20 text-zinc-950 sm:py-24 lg:py-28">
+      <section className="section-surface-alt py-20 text-zinc-950 sm:py-24 lg:py-28">
         <Container>
           <div className="max-w-4xl">
-            <SectionIntro eyebrow="Our process" title="A clear path from enquiry to service." />
+            <SectionIntro
+              eyebrow="Our process"
+              title="A clear path from enquiry to service."
+            />
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:items-stretch">
-            {["Share your requirement", "Review the equipment", "Service or supply", "Keep it ready"].map((step, index) => {
-              const icons = [MessageSquare, SearchCheck, Wrench, ShieldCheck] as const
+            {[
+              "Share your requirement",
+              "Review the equipment",
+              "Service or supply",
+              "Keep it ready",
+            ].map((step, index) => {
+              const icons = [
+                MessageSquare,
+                SearchCheck,
+                Wrench,
+                ShieldCheck,
+              ] as const
               const Icon = icons[index]
               const stepNumber = String(index + 1).padStart(2, "0")
 
@@ -205,7 +305,7 @@ export default function Page() {
                   borderless
                   className="group relative flex h-full min-h-[20rem] flex-col justify-between overflow-hidden rounded-[1.5rem] border border-zinc-200 bg-white px-7 py-7 shadow-none transition-colors duration-300 hover:border-red-200 sm:min-h-[21rem] lg:px-8 lg:py-8"
                 >
-                  <span className="absolute right-5 top-5 text-[clamp(3.5rem,9vw,6rem)] font-semibold tracking-[-0.08em] text-zinc-950/[0.05] select-none">
+                  <span className="absolute top-5 right-5 text-[clamp(3.5rem,9vw,6rem)] font-semibold tracking-[-0.08em] text-zinc-950/[0.05] select-none">
                     {stepNumber}
                   </span>
                   <div className="relative z-10 flex h-full flex-col">
@@ -217,12 +317,14 @@ export default function Page() {
                         {step}
                       </h3>
                       <p className="mt-4 max-w-sm text-sm leading-7 text-zinc-600">
-                        {[
-                          "Tell us about your site, inventory or immediate need.",
-                          "We understand condition, type, access and maintenance history.",
-                          "We complete the agreed work with practical recommendations.",
-                          "Your team gets a clearer plan for ongoing readiness.",
-                        ][index]}
+                        {
+                          [
+                            "Tell us about your site, inventory or immediate need.",
+                            "We understand condition, type, access and maintenance history.",
+                            "We complete the agreed work with practical recommendations.",
+                            "Your team gets a clearer plan for ongoing readiness.",
+                          ][index]
+                        }
                       </p>
                     </div>
                   </div>
@@ -233,7 +335,7 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="section-surface-alt py-16">
+      <section className="section-surface py-16">
         <Container>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-6xl">
@@ -247,7 +349,8 @@ export default function Page() {
                 The right unit for the right risk.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-                We help you choose suitable equipment for the spaces and risks present at your workplace.
+                We help you choose suitable equipment for the spaces and risks
+                present at your workplace.
               </p>
             </div>
 
@@ -262,14 +365,14 @@ export default function Page() {
             </Link>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3 lg:mt-16">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:mt-16 xl:grid-cols-3">
             {extinguisherTypes.map((type, index) => (
               <Link
                 key={type.title}
                 href="/contact"
                 className="group block h-full focus-visible:outline-none"
               >
-                <div className="relative isolate h-full min-h-[320px] overflow-hidden rounded-[24px] bg-zinc-950 text-white shadow-[0_24px_50px_-30px_rgba(0,0,0,0.45)] transition-transform duration-300 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_28px_58px_-28px_rgba(0,0,0,0.5)] group-focus-visible:ring-2 group-focus-visible:ring-[#d50707] group-focus-visible:ring-offset-4 group-focus-visible:ring-offset-white">
+                <div className="relative isolate h-full min-h-[320px] overflow-hidden rounded-[24px] bg-white text-white shadow-[0_24px_50px_-30px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_28px_58px_-28px_rgba(0,0,0,0.3)] group-focus-visible:ring-2 group-focus-visible:ring-[#d50707] group-focus-visible:ring-offset-4 group-focus-visible:ring-offset-white">
                   <div className="absolute inset-0 bg-muted">
                     <Image
                       src={
@@ -305,7 +408,7 @@ export default function Page() {
 
       <CTASection
         title="Need reliable fire safety solutions?"
-        description="We&apos;re here to help you keep what matters safe with clear, responsible fire safety support in Chennai."
+        description="We're here to help you keep what matters safe with clear, responsible fire safety support in Chennai."
         label="Call Us Today"
         href="/contact"
       />

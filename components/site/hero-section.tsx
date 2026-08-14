@@ -4,6 +4,7 @@ import { ArrowRight, Phone } from "lucide-react"
 
 import { buttonVariants } from "@/components/ui/button"
 import { Container } from "@/components/site/container"
+import { BOOKING_URL } from "@/lib/booking"
 import { cn } from "@/lib/utils"
 
 export function HeroSection({
@@ -19,7 +20,7 @@ export function HeroSection({
   eyebrow?: string
   title: ReactNode
   description: string
-  primary?: { label: string; href: string }
+  primary?: { label: string; href: string; external?: boolean }
   secondary?: { label: string; href: string }
   image?: string
   children?: ReactNode
@@ -52,8 +53,10 @@ export function HeroSection({
               {description}
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href={primary?.href ?? "/contact"}
+                <Link
+                  href={primary?.href ?? BOOKING_URL}
+                  target={!primary || primary.external ? "_blank" : undefined}
+                  rel={!primary || primary.external ? "noopener noreferrer" : undefined}
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "h-12 w-full rounded-lg px-6 sm:w-auto"
@@ -80,14 +83,16 @@ export function HeroSection({
   }
 
   return (
-    <section className="relative -mt-[88px] min-h-[760px] overflow-hidden border-b bg-muted/40 pt-[88px] lg:min-h-[850px]">
+    <section className="relative isolate -mt-[88px] min-h-[760px] overflow-hidden border-b border-white/10 bg-zinc-950 pt-[88px] text-white lg:min-h-[850px]">
       {image ? (
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-16"
+          className="absolute inset-0 -z-20 bg-cover bg-center"
           style={{ backgroundImage: `url(${image})` }}
           aria-hidden="true"
         />
       ) : null}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(9,9,11,0.97)_0%,rgba(9,9,11,0.86)_36%,rgba(9,9,11,0.34)_68%,rgba(9,9,11,0.12)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-zinc-950/90 to-transparent" />
       <Container className="relative flex min-h-[672px] items-end pt-28 pb-16 sm:pt-32 lg:min-h-[762px] lg:items-center lg:pt-36 lg:pb-20">
         <div className="w-full">
           {eyebrow ? (
@@ -95,15 +100,17 @@ export function HeroSection({
               {eyebrow}
             </p>
           ) : null}
-          <h1 className="mt-4 max-w-4xl text-4xl font-medium tracking-normal text-foreground md:text-6xl">
+          <h1 className="mt-4 max-w-4xl text-4xl font-medium tracking-normal text-white md:text-6xl">
             {title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">
             {description}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href={primary?.href ?? "/contact"}
+              href={primary?.href ?? BOOKING_URL}
+              target={!primary || primary.external ? "_blank" : undefined}
+              rel={!primary || primary.external ? "noopener noreferrer" : undefined}
               className={cn(buttonVariants({ size: "lg" }))}
             >
               {primary?.label ?? "Book a Free Consultation"}

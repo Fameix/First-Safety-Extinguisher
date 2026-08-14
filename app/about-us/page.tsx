@@ -18,6 +18,7 @@ import { Container } from "@/components/site/container"
 import { CTASection } from "@/components/site/cta-section"
 import { IconBadge } from "@/components/site/icon-badge"
 import { buttonVariants } from "@/components/ui/button"
+import { BOOKING_URL } from "@/lib/booking"
 import { pageMetadata } from "@/lib/site-data"
 import { cn } from "@/lib/utils"
 
@@ -152,14 +153,14 @@ export default function Page() {
     <>
       <section className="relative isolate -mt-[88px] min-h-[760px] overflow-hidden bg-zinc-950 pt-[88px] text-white lg:min-h-[850px]">
         <Image
-          src="/home-hero-banner-new.png"
+          src="/about-us-hero-banner.png"
           alt="Fire protection equipment supplied and serviced by Aulukya in Chennai"
           fill
           priority
           sizes="100vw"
-          className="-z-20 object-cover object-[68%_center] opacity-50 sm:object-[62%_center] lg:object-center"
+          className="-z-20 object-cover object-center"
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(9,9,11,0.92)_0%,rgba(9,9,11,0.82)_28%,rgba(9,9,11,0.6)_62%,rgba(9,9,11,0.72)_100%),radial-gradient(circle_at_18%_16%,rgba(220,38,38,0.32),transparent_30%),linear-gradient(90deg,rgba(9,9,11,0.96)_0%,rgba(9,9,11,0.88)_28%,rgba(9,9,11,0.58)_60%,rgba(9,9,11,0.32)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(9,9,11,0.97)_0%,rgba(9,9,11,0.86)_36%,rgba(9,9,11,0.34)_68%,rgba(9,9,11,0.08)_100%)]" />
         <Container className="flex min-h-[672px] items-end pt-28 pb-16 sm:pt-32 lg:min-h-[762px] lg:items-center lg:pt-36 lg:pb-20">
           <div className="max-w-3xl animate-in duration-700 fade-in slide-in-from-bottom-4">
             <p className="flex items-center gap-3 text-xs font-bold tracking-[0.22em] text-red-400 uppercase before:h-px before:w-10 before:bg-red-500">
@@ -174,24 +175,28 @@ export default function Page() {
               protection, safety equipment, installation, maintenance and
               compliance support.
             </p>
-            <Link
-              href="/contact"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "mt-9 h-12 rounded-lg px-6"
-              )}
-            >
-              Book a Free Consultation <ArrowRight aria-hidden="true" />
-            </Link>
-            <Link
-              href="tel:+919003012345"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "mt-3 h-12 rounded-lg border-white/25 bg-white/5 px-6 text-white backdrop-blur-sm hover:bg-white hover:text-zinc-950"
-              )}
-            >
-              <Phone aria-hidden="true" /> Call Us Now
-            </Link>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <Link
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-12 rounded-lg px-6"
+                )}
+              >
+                Book a Free Consultation <ArrowRight aria-hidden="true" />
+              </Link>
+              <Link
+                href="tel:+919003012345"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "h-12 rounded-lg border-white/25 bg-white/5 px-6 text-white backdrop-blur-sm hover:bg-white hover:text-zinc-950"
+                )}
+              >
+                <Phone aria-hidden="true" /> Call Us Now
+              </Link>
+            </div>
           </div>
         </Container>
       </section>
@@ -200,7 +205,7 @@ export default function Page() {
         <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-zinc-100 shadow-[0_24px_80px_-40px_rgba(0,0,0,0.5)]">
             <Image
-              src="/about-fire-inspection.png"
+              src="/our-company-workplace-fire-protection.png"
               alt="Aulukya technician carrying out a fire safety equipment inspection in Chennai"
               fill
               sizes="(min-width: 1024px) 52vw, 100vw"
@@ -306,7 +311,7 @@ export default function Page() {
             <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-[0_18px_60px_-42px_rgba(0,0,0,0.35)] lg:min-h-[36rem]">
               <div className="relative h-48 overflow-hidden bg-zinc-100 sm:h-56 lg:h-72">
                 <Image
-                  src="/home-why-fire-safety.jpeg"
+                  src="/mission-card.png"
                   alt="Fire safety service support for businesses in Chennai"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -331,7 +336,7 @@ export default function Page() {
             <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-[0_18px_60px_-42px_rgba(0,0,0,0.35)] lg:min-h-[36rem]">
               <div className="relative h-48 overflow-hidden bg-zinc-100 sm:h-56 lg:h-72">
                 <Image
-                  src="/home-hero-fire-extinguisher.jpeg"
+                  src="/vision-card.png"
                   alt="Workplace fire safety equipment and readiness"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -359,7 +364,7 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="section-surface-alt overflow-hidden overflow-x-clip py-16 text-white sm:py-20 lg:py-24">
+      <section className="section-surface-alt overflow-hidden overflow-x-clip py-16 text-zinc-950 sm:py-20 lg:py-24">
         <Container className="max-w-[1440px]">
           <div className="max-w-3xl text-left">
             <Eyebrow light>How we work</Eyebrow>
@@ -374,7 +379,7 @@ export default function Page() {
           </div>
 
           <div className="mt-8 sm:mt-10">
-            <div className="relative aspect-[16/10] min-h-[240px] w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-zinc-900 shadow-[0_24px_70px_-42px_rgba(0,0,0,0.75)] sm:aspect-[16/9] sm:min-h-[320px] sm:rounded-[2rem] lg:min-h-[380px]">
+            <div className="relative aspect-[16/10] min-h-[240px] w-full overflow-hidden rounded-[1.5rem] border border-zinc-200 bg-white shadow-[0_24px_70px_-42px_rgba(0,0,0,0.25)] sm:aspect-[16/9] sm:min-h-[320px] sm:rounded-[2rem] lg:min-h-[380px]">
               <Image
                 src="/about-fire-inspection.png"
                 alt="Fire safety specialist reviewing workplace protection measures"
@@ -387,7 +392,7 @@ export default function Page() {
                 <button
                   type="button"
                   aria-label="Play overview video"
-                  className="group flex size-20 items-center justify-center rounded-full border border-white/20 bg-white/10 shadow-[0_18px_50px_-22px_rgba(0,0,0,0.8)] backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-4 focus-visible:ring-offset-zinc-950 focus-visible:outline-none sm:size-24"
+                  className="group flex size-20 items-center justify-center rounded-full border border-white/60 bg-white/70 shadow-[0_18px_50px_-22px_rgba(0,0,0,0.3)] backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:outline-none sm:size-24"
                 >
                   <span className="flex size-14 items-center justify-center rounded-full bg-red-600 text-white shadow-[0_10px_24px_-12px_rgba(220,38,38,0.9)] transition-transform duration-300 group-hover:scale-105 sm:size-16">
                     <Play
@@ -490,11 +495,11 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="bg-zinc-950 py-20 text-white sm:py-24 lg:py-28">
+      <section className="section-surface-alt py-20 text-zinc-950 sm:py-24 lg:py-28">
         <Container>
           <div className="max-w-3xl">
             <Eyebrow light>Our values</Eyebrow>
-            <h2 className="mt-5 font-heading text-4xl leading-tight font-semibold tracking-[-0.035em] text-white sm:text-5xl">
+            <h2 className="mt-5 font-heading text-4xl leading-tight font-semibold tracking-[-0.035em] text-zinc-950 sm:text-5xl">
               Built on values. Driven by responsibility.
             </h2>
           </div>
@@ -503,22 +508,22 @@ export default function Page() {
               <article
                 key={value.title}
                 className={cn(
-                  "group flex h-full min-h-[16rem] flex-col rounded-2xl border border-white/10 bg-white/[0.035] p-7 text-white shadow-none transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.055] sm:min-h-[17rem] lg:p-8"
+                  "group flex h-full min-h-[16rem] flex-col rounded-2xl border border-zinc-200 bg-white p-7 text-zinc-950 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-red-200 sm:min-h-[17rem] lg:p-8"
                 )}
               >
                 <div className="flex items-start justify-between gap-4">
                   <IconBadge
                     size="md"
-                    className="bg-[#2a0707]/70 text-red-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] transition-transform duration-300 group-hover:scale-105"
+                    className="bg-red-50 text-red-600 shadow-none ring-1 ring-red-100 transition-transform duration-300 group-hover:scale-105"
                   >
                     <value.icon className="size-5" aria-hidden="true" />
                   </IconBadge>
                 </div>
-                <h3 className="mt-6 font-heading text-2xl font-semibold tracking-[-0.03em] text-white">
+                <h3 className="mt-6 font-heading text-2xl font-semibold tracking-[-0.03em] text-zinc-950">
                   {value.title}
                 </h3>
                 <div className="mt-4 h-px w-12 bg-red-500/40" />
-                <p className="mt-4 max-w-sm text-sm leading-7 text-white/60">
+                <p className="mt-4 max-w-sm text-sm leading-7 text-zinc-600">
                   {value.description}
                 </p>
               </article>
@@ -531,7 +536,8 @@ export default function Page() {
         title="Build a safer workplace with Aulukya."
         description="Talk to our team about reliable fire protection, maintenance and compliance solutions for your workplace."
         label="Book a Free Consultation"
-        href="/contact"
+        href={BOOKING_URL}
+        external
       />
     </>
   )

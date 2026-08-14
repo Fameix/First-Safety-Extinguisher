@@ -28,7 +28,7 @@ export function FAQShowcase({ items }: { items: FAQItem[] }) {
   }, [items, query])
 
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="section-surface-alt py-16 sm:py-20 lg:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-semibold tracking-[-0.04em] text-balance text-zinc-950 sm:text-4xl lg:text-5xl">

@@ -14,6 +14,7 @@ import { CTASection } from "@/components/site/cta-section"
 import { IconBadge } from "@/components/site/icon-badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { BOOKING_URL } from "@/lib/booking"
 import { pageMetadata } from "@/lib/site-data"
 import { cn } from "@/lib/utils"
 
@@ -28,49 +29,49 @@ const industries = [
     title: "Commercial Buildings",
     description:
       "Fire protection solutions for offices and commercial spaces, helping protect people, property and daily business operations.",
-    image: "/home-service-extinguishers.jpeg",
+    image: "/commercial-buildings.png",
   },
   {
     title: "Industrial Facilities",
     description:
       "Reliable fire safety support for industrial workplaces, covering essential equipment, maintenance and compliance requirements.",
-    image: "/home-service-hydrant.jpeg",
+    image: "/industrial-facilities.png",
   },
   {
     title: "Retail & Shopping",
     description:
       "Practical fire protection for retail stores and shopping spaces, helping safeguard customers, employees and property.",
-    image: "/home-service-alarm.jpeg",
+    image: "/retail-shopping.png",
   },
   {
     title: "Educational Institutions",
     description:
       "Fire safety solutions for schools and colleges, supporting safer learning environments with equipment and compliance support.",
-    image: "/home-service-audit.jpeg",
+    image: "/educational-institutions.png",
   },
   {
     title: "Healthcare Facilities",
     description:
       "Reliable fire protection for hospitals and clinics, with suitable equipment, maintenance and compliance support.",
-    image: "/home-service-ppe.jpeg",
+    image: "/healthcare-facilities.png",
   },
   {
     title: "Residential & Apartments",
     description:
       "Fire safety support for apartments and residential buildings, helping protect residents, common areas and property.",
-    image: "/home-service-amc.jpeg",
+    image: "/residential-buildings.png",
   },
   {
     title: "Hospitality",
     description:
       "Fire protection solutions for hotels and restaurants, helping safeguard guests, employees and property with reliable support.",
-    image: "/home-service-noc.jpeg",
+    image: "/hotels-hospitality.png",
   },
   {
     title: "Warehouses & Logistics",
     description:
       "Fire safety solutions for warehouses and logistics facilities, helping protect stored goods, infrastructure and operations.",
-    image: "/home-service-hydrant.jpeg",
+    image: "/warehouses-logistics.png",
   },
 ] as const
 
@@ -131,7 +132,7 @@ export default function Page() {
     <>
       <section className="relative isolate -mt-[88px] min-h-[760px] overflow-hidden bg-zinc-950 pt-[88px] text-white lg:min-h-[850px]">
         <Image
-          src="/home-hero-banner-new.png"
+          src="/industries-hero-banner.png"
           alt="Fire protection systems and workplace safety equipment"
           fill
           priority
@@ -156,7 +157,9 @@ export default function Page() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href="/contact"
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "h-12 w-full rounded-lg px-6 sm:w-auto"
@@ -182,7 +185,7 @@ export default function Page() {
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
           <div className="relative order-1 aspect-[4/3] overflow-hidden rounded-2xl bg-muted lg:order-2">
             <Image
-              src="/about-fire-inspection.png"
+              src="/industries-workplace-fire-protection.png"
               alt="A fire safety technician inspecting a fire hose reel and extinguisher system"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -204,7 +207,9 @@ export default function Page() {
               </span>
             </div>
             <Link
-              href="/contact"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "mt-8 h-12 rounded-lg px-6"
@@ -216,16 +221,16 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="bg-zinc-950 py-20 text-white sm:py-24 lg:py-32">
+      <section className="section-surface-alt py-20 text-zinc-950 sm:py-24 lg:py-32">
         <Container>
           <div className="max-w-4xl">
             <p className="flex items-center gap-3 text-xs font-bold tracking-[0.2em] text-primary uppercase before:h-px before:w-8 before:bg-primary">
               Our Industries
             </p>
-            <h2 className="mt-4 font-heading text-3xl leading-tight font-semibold tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl lg:whitespace-nowrap">
+            <h2 className="mt-4 font-heading text-3xl leading-tight font-semibold tracking-[-0.03em] text-zinc-950 sm:text-4xl lg:text-5xl lg:whitespace-nowrap">
               Safety Solutions for Diverse Business Environments.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/60">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-600">
               Practical fire protection shaped around each workplace, its people
               and its operations.
             </p>
@@ -237,9 +242,9 @@ export default function Page() {
                 <Card
                   borderless
                   key={industry.title}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white/[0.035] p-0 text-white shadow-none transition-colors duration-300 hover:bg-white/[0.055]"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-0 text-zinc-950 shadow-sm transition-colors duration-300 hover:border-red-200"
                 >
-                  <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-900">
+                  <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-100">
                     <Image
                       src={industry.image}
                       alt={`${industry.title} fire safety solutions`}
@@ -252,7 +257,7 @@ export default function Page() {
                     <h3 className="font-heading text-xl font-semibold tracking-tight">
                       {industry.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-6 text-white/55">
+                    <p className="mt-4 text-sm leading-6 text-zinc-600">
                       {industry.description}
                     </p>
                   </div>
@@ -318,7 +323,8 @@ export default function Page() {
         title="Find the Right Fire Safety Solution for Your Industry."
         description="Talk to our team about fire protection, maintenance and compliance support."
         label="Book a Free Consultation"
-        href="/contact"
+        href={BOOKING_URL}
+        external
       />
     </>
   )
