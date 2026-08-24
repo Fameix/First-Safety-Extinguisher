@@ -33,32 +33,50 @@ const services = [
   {
     title: "Inspection",
     text: "Regular inspection to ensure extinguishers are accessible, properly mounted, clearly identified and ready for use.",
-    image: "/images/services/extinguisher/inspection.png",
+    image: "/images/services/extinguisher/Inspection(2).png",
+    imageStyle: { height: 64, top: -2, left: -7 },
+    imageWidth: 1341,
+    imageHeight: 1173,
   },
   {
     title: "Maintenance",
     text: "Professional maintenance to keep fire extinguishers reliable, functional and in good working condition.",
-    image: "/images/services/extinguisher/maintenance.png",
+    image: "/images/services/extinguisher/Maintenance(1).png",
+    imageStyle: { height: 65, top: -1, left: -18 },
+    imageWidth: 1536,
+    imageHeight: 1024,
   },
   {
     title: "Refill",
     text: "Timely refilling of extinguishing agents to restore protection after use or when required.",
-    image: "/images/services/extinguisher/refill.png",
+    image: "/images/services/extinguisher/Refill(1).png",
+    imageStyle: { height: 63, top: -1, left: -6 },
+    imageWidth: 1340,
+    imageHeight: 1174,
   },
   {
     title: "Testing",
     text: "Routine testing and pressure checks to help ensure fire extinguishers perform safely and effectively.",
-    image: "/images/services/extinguisher/testing.png",
+    image: "/images/services/extinguisher/Testing(2).png",
+    imageStyle: { height: 60, top: 0, left: -19 },
+    imageWidth: 1536,
+    imageHeight: 1024,
   },
   {
     title: "Replacement",
     text: "Replacement of damaged, expired or unreliable extinguishers with suitable fire protection equipment.",
-    image: "/images/services/extinguisher/replacement.png",
+    image: "/images/services/extinguisher/Replacement(1).png",
+    imageStyle: { height: 91, top: -12, left: -12 },
+    imageWidth: 1536,
+    imageHeight: 1024,
   },
   {
     title: "Supply",
     text: "Reliable supply of fire extinguishers selected to match your workplace and fire protection requirements.",
-    image: "/images/services/extinguisher/supply.png",
+    image: "/images/services/extinguisher/Supply(1).png",
+    imageStyle: { height: 63, top: -2, left: -14 },
+    imageWidth: 1536,
+    imageHeight: 1024,
   },
 ]
 
@@ -168,9 +186,9 @@ export default function Page() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "h-12 w-full rounded-lg px-6 sm:w-auto"
@@ -240,31 +258,37 @@ export default function Page() {
             copy="Reliable fire extinguisher services to keep your workplace protected, compliant and ready when it matters."
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map(({ title, text, image }) => (
-              <Card
-                key={title}
-                borderless
-                className="min-h-56 rounded-2xl border border-zinc-200 bg-white p-7 text-zinc-950 shadow-sm transition-colors hover:border-red-200"
-              >
-                <CardHeader className="p-0">
-                  <div className="relative size-16">
-                    <Image
-                      src={image}
-                      alt={`${title} 3D illustration`}
-                      fill
-                      sizes="64px"
-                      className="object-contain"
-                    />
-                  </div>
-                  <CardTitle className="mt-6 text-xl text-zinc-950">
-                    {title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <p className="mt-3 text-sm leading-6 text-zinc-600">{text}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {services.map(
+              ({ title, text, image, imageStyle, imageWidth, imageHeight }) => (
+                <Card
+                  key={title}
+                  borderless
+                  className="min-h-56 rounded-2xl border border-zinc-200 bg-white p-7 text-zinc-950 shadow-sm transition-colors hover:border-red-200"
+                >
+                  <CardHeader className="p-0">
+                    <div className="relative" style={{ height: 70, width: 96 }}>
+                      <Image
+                        src={image}
+                        alt={`${title} 3D illustration`}
+                        width={imageWidth}
+                        height={imageHeight}
+                        sizes="96px"
+                        className="absolute w-auto max-w-none object-contain"
+                        style={imageStyle}
+                      />
+                    </div>
+                    <CardTitle className="mt-6 text-xl text-zinc-950">
+                      {title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <p className="mt-3 text-sm leading-6 text-zinc-600">
+                      {text}
+                    </p>
+                  </CardContent>
+                </Card>
+              )
+            )}
           </div>
         </Container>
       </section>
@@ -377,10 +401,10 @@ export default function Page() {
                     <Image
                       src={
                         index === 0
-                          ? "/home-service-extinguishers.jpeg"
+                          ? "/images/extinguisher-types/abc-dry-powder.png"
                           : index === 1
-                            ? "/home-hero-equipment.png"
-                            : "/home-project-maintenance.jpeg"
+                            ? "/images/extinguisher-types/co2-extinguishers.png"
+                            : "/images/extinguisher-types/foam-extinguishers.png"
                       }
                       alt={type.title}
                       fill

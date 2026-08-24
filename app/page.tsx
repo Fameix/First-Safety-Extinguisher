@@ -3,22 +3,16 @@ import Link from "next/link"
 import {
   ArrowRight,
   Award,
-  Building2,
   Check,
-  Factory,
-  HeartPulse,
-  Hospital,
-  Monitor,
   Phone,
   ShieldCheck,
   Sparkles,
-  SquareActivity,
-  Warehouse,
 } from "lucide-react"
 
 import { Container } from "@/components/site/container"
 import { CTASection } from "@/components/site/cta-section"
 import { IconBadge } from "@/components/site/icon-badge"
+import { IndustriesSection } from "@/components/site/industries-section"
 import { buttonVariants } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { BOOKING_URL } from "@/lib/booking"
@@ -84,31 +78,20 @@ const services: Service[] = [
     title: "AMC Services",
     text: "Scheduled maintenance for fire protection equipment.",
     href: "/fire-safety-amc-chennai",
-    image: "/service-amc.png",
+    image: "/home-service-amc-3d.png",
   },
   {
     title: "Fire Audits",
     text: "Fire risk assessments and compliance-focused audits.",
     href: "/fire-audits-chennai",
-    image: "/service-fire-audit.png",
+    image: "/fire-audits.png",
   },
   {
     title: "Fire NOC Consulting",
     text: "Documentation and approval support for Fire NOC needs.",
     href: "/fire-noc-consulting-chennai",
-    image: "/service-fire-noc-consulting.png",
+    image: "/home-service-fire-noc-3d.png",
   },
-]
-
-const industries = [
-  { label: "Commercial Buildings", icon: Building2 },
-  { label: "Industrial Units", icon: Factory },
-  { label: "Residential Apartments", icon: HeartPulse },
-  { label: "IT & ITES Parks", icon: Monitor },
-  { label: "Hospitals", icon: Hospital },
-  { label: "Educational Institutions", icon: Award },
-  { label: "Warehouses", icon: Warehouse },
-  { label: "Malls & Shopping Complexes", icon: SquareActivity },
 ]
 
 const benefits = [
@@ -411,50 +394,7 @@ export default function Page() {
         </Container>
       </section>
 
-      <section className="section-surface-alt py-20 sm:py-24 lg:py-28">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <div>
-              <SectionIntro
-                eyebrow="Industries We Serve"
-                title="Protection built around your environment"
-              />
-              <p className="mt-5 max-w-lg text-base leading-7 text-muted-foreground">
-                Fire safety requirements change with every building and
-                operation. We bring practical support to the places where people
-                live, work and learn.
-              </p>
-              <Link
-                href="/industries"
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "mt-8 h-12 rounded-lg px-6"
-                )}
-              >
-                View All Industries <ArrowRight aria-hidden="true" />
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 gap-x-6 sm:grid-cols-2 lg:gap-x-10">
-              {industries.map((industry) => {
-                const Icon = industry.icon
-                return (
-                  <div
-                    key={industry.label}
-                    className="flex items-center gap-4 py-5 sm:py-6"
-                  >
-                    <IconBadge size="sm">
-                      <Icon className="size-5" aria-hidden="true" />
-                    </IconBadge>
-                    <h3 className="text-sm leading-5 font-semibold sm:text-base">
-                      {industry.label}
-                    </h3>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <IndustriesSection />
 
       <CTASection
         title="Need reliable fire safety solutions?"
