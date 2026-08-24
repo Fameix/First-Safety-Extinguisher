@@ -78,19 +78,19 @@ const services: Service[] = [
     title: "AMC Services",
     text: "Scheduled maintenance for fire protection equipment.",
     href: "/fire-safety-amc-chennai",
-    image: "/service-amc.png",
+    image: "/home-service-amc-3d.png",
   },
   {
     title: "Fire Audits",
     text: "Fire risk assessments and compliance-focused audits.",
     href: "/fire-audits-chennai",
-    image: "/service-fire-audit.png",
+    image: "/fire-audits.png",
   },
   {
     title: "Fire NOC Consulting",
     text: "Documentation and approval support for Fire NOC needs.",
     href: "/fire-noc-consulting-chennai",
-    image: "/service-fire-noc-consulting.png",
+    image: "/home-service-fire-noc-3d.png",
   },
 ]
 

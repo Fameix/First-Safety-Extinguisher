@@ -10,6 +10,10 @@
 
 # testing
 /coverage
+/.edge-verify/
+/.edge-noc-verify/
+/services-visual-verification.png
+/noc-services-3d-verification.png
 
 # next.js
 /.next/
