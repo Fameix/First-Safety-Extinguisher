@@ -66,7 +66,7 @@ const services: Service[] = [
     title: "Hydrant Systems",
     text: "Design, supply, installation and AMC support.",
     href: "/fire-hydrant-systems-chennai",
-    image: "/service-hydrant-system.png",
+    image: "/Hydrant Syatem.png",
   },
   {
     title: "Safety PPE",
