@@ -17,32 +17,32 @@ const defaultChecklist: ChecklistItem[] = [
   {
     text: "Correct extinguisher type for the risk",
     icon: ShieldCheck,
-    image: "/home-hero-equipment.png",
+    image: "/images/extinguisher-types/abc-dry-powder.png",
   },
   {
     text: "Visible, unobstructed and easy to reach",
     icon: MapPin,
-    image: "/home-hero-fire-extinguisher.jpeg",
+    image: "/fire-safety-amc-maintenance.png",
   },
   {
     text: "Pressure gauge in the serviceable range",
     icon: Gauge,
-    image: "/home-service-extinguishers.jpeg",
+    image: "/images/services/extinguisher/Testing(2).png",
   },
   {
     text: "Pin, seal, hose and handle in good condition",
     icon: ClipboardCheck,
-    image: "/home-project-maintenance.jpeg",
+    image: "/about-fire-inspection.png",
   },
   {
     text: "Current inspection and service marking",
     icon: ClipboardCheck,
-    image: "/home-service-audit.jpeg",
+    image: "/home-service-audit-new.png",
   },
   {
     text: "Team members know where it is and how to use it",
     icon: Headset,
-    image: "/home-hero-fire-extinguisher.jpeg",
+    image: "/readiness-team-extinguisher-training.png",
   },
 ]
 
@@ -50,10 +50,12 @@ export function ReadinessChecklist({
   items = defaultChecklist,
   eyebrow = "Readiness checklist",
   title = "Before an emergency, check the basics.",
+  resetToFirstOnMouseLeave = false,
 }: {
   items?: ChecklistItem[]
   eyebrow?: string
   title?: string
+  resetToFirstOnMouseLeave?: boolean
 }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [supportsHover, setSupportsHover] = useState(false)
@@ -80,7 +82,12 @@ export function ReadinessChecklist({
           </h2>
         </div>
 
-        <div className="mt-8 grid flex-1 gap-4">
+        <div
+          className="mt-8 grid flex-1 gap-4"
+          onMouseLeave={() => {
+            if (supportsHover && resetToFirstOnMouseLeave) setActiveIndex(0)
+          }}
+        >
           {items.map(({ text, icon }, index) => {
             const Icon = icon ?? [ShieldCheck, MapPin, Gauge, ClipboardCheck, ClipboardCheck, Headset][index % 6]
             const isActive = index === activeIndex
