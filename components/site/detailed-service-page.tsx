@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import type { CSSProperties } from "react"
 import { ArrowRight, Phone, type LucideIcon } from "lucide-react"
 
 import { Container } from "@/components/site/container"
@@ -36,9 +37,23 @@ export type DetailedServiceContent = {
     eyebrow: string
     title: string
     description: string
-    items: { title: string; text: string; icon: LucideIcon; image?: string }[]
+    roomyImageSpacing?: boolean
+    items: {
+      title: string
+      text: string
+      icon: LucideIcon
+      image?: string
+      imageWidth?: number
+      imageHeight?: number
+      imageStyle?: CSSProperties
+    }[]
   }
-  checklist: { eyebrow: string; title: string; items: ChecklistItem[] }
+  checklist: {
+    eyebrow: string
+    title: string
+    items: ChecklistItem[]
+    resetToFirstOnMouseLeave?: boolean
+  }
   process: { title: string; text: string; icon: LucideIcon }[]
   feature: {
     eyebrow: string
@@ -120,9 +135,9 @@ export function DetailedServicePage({
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "h-12 w-full rounded-lg px-6 sm:w-auto"
@@ -185,44 +200,80 @@ export function DetailedServicePage({
             copy={content.services.description}
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {content.services.items.map(({ title, text, icon: Icon, image }) => (
-              <Card
-                key={title}
-                borderless
-                className="min-h-56 rounded-2xl border border-zinc-200 bg-white p-7 text-zinc-950 shadow-sm transition-colors hover:border-red-200"
-              >
-                <CardHeader className="p-0">
-                  {image ? (
-                    <div className="relative size-16">
-                      <Image
-                        src={image}
-                        alt={`${title} 3D illustration`}
-                        fill
-                        sizes="64px"
-                        className={cn(
-                          "object-contain",
-                          image.startsWith("/assets/images/fire_alarm_") &&
-                            "scale-[1.3]"
-                        )}
-                      />
-                    </div>
-                  ) : (
-                    <IconBadge
-                      size="sm"
-                      className="bg-red-50 text-red-600 shadow-none ring-1 ring-red-100"
+            {content.services.items.map(
+              ({
+                title,
+                text,
+                icon: Icon,
+                image,
+                imageWidth,
+                imageHeight,
+                imageStyle,
+              }) => (
+                <Card
+                  key={title}
+                  borderless
+                  className="min-h-56 rounded-2xl border border-zinc-200 bg-white p-7 text-zinc-950 shadow-sm transition-colors hover:border-red-200"
+                >
+                  <CardHeader className="p-0">
+                    {image ? (
+                      imageStyle && imageWidth && imageHeight ? (
+                        <div
+                          className="relative"
+                          style={{ height: 70, width: 96 }}
+                        >
+                          <Image
+                            src={image}
+                            alt={`${title} 3D illustration`}
+                            width={imageWidth}
+                            height={imageHeight}
+                            sizes="96px"
+                            className="absolute w-auto max-w-none object-contain"
+                            style={imageStyle}
+                          />
+                        </div>
+                      ) : (
+                        <div className="relative size-16">
+                          <Image
+                            src={image}
+                            alt={`${title} 3D illustration`}
+                            fill
+                            sizes="64px"
+                            className={cn(
+                              "object-contain",
+                              image.startsWith("/assets/images/fire_alarm_") &&
+                                "scale-[1.3]"
+                            )}
+                          />
+                        </div>
+                      )
+                    ) : (
+                      <IconBadge
+                        size="sm"
+                        className="bg-red-50 text-red-600 shadow-none ring-1 ring-red-100"
+                      >
+                        <Icon className="size-4" />
+                      </IconBadge>
+                    )}
+                    <CardTitle
+                      className={cn(
+                        content.services.roomyImageSpacing && image
+                          ? "mt-7"
+                          : "mt-6",
+                        "text-xl text-zinc-950"
+                      )}
                     >
-                      <Icon className="size-4" />
-                    </IconBadge>
-                  )}
-                  <CardTitle className="mt-6 text-xl text-zinc-950">
-                    {title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <p className="mt-3 text-sm leading-6 text-zinc-600">{text}</p>
-                </CardContent>
-              </Card>
-            ))}
+                      {title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <p className="mt-3 text-sm leading-6 text-zinc-600">
+                      {text}
+                    </p>
+                  </CardContent>
+                </Card>
+              )
+            )}
           </div>
         </Container>
       </section>
@@ -232,6 +283,9 @@ export function DetailedServicePage({
             items={content.checklist.items}
             eyebrow={content.checklist.eyebrow}
             title={content.checklist.title}
+            resetToFirstOnMouseLeave={
+              content.checklist.resetToFirstOnMouseLeave
+            }
           />
         </Container>
       </section>
@@ -305,7 +359,7 @@ export function DetailedServicePage({
                 href="/contact"
                 className="group block h-full focus-visible:outline-none"
               >
-                  <div className="relative isolate h-full min-h-[320px] overflow-hidden rounded-[24px] bg-white text-white shadow-[0_24px_50px_-30px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                <div className="relative isolate h-full min-h-[320px] overflow-hidden rounded-[24px] bg-white text-white shadow-[0_24px_50px_-30px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out group-hover:-translate-y-1">
                   <Image
                     src={item.image}
                     alt={item.title}
