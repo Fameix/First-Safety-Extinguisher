@@ -343,6 +343,7 @@ export default function Page() {
                         fill
                         sizes="(min-width: 1024px) 224px, (min-width: 640px) 50vw, 100vw"
                         className="object-contain object-left"
+                        style={{ objectFit: "contain", objectPosition: "left" }}
                       />
                     </div>
                     <h3 className="mt-5 font-heading text-xl font-semibold tracking-tight">
