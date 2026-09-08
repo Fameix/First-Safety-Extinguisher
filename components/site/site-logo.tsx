@@ -12,12 +12,12 @@ export function SiteLogo({
   priority?: boolean
 }) {
   const sizeClass = cn(
-    "h-auto w-[140px] object-cover object-center sm:w-[160px] md:w-[180px] lg:w-[200px]",
+    "h-auto w-[140px] object-contain object-center sm:w-[160px] md:w-[180px] lg:w-[200px]",
     className
   )
-  const logoSrc = "/aulukya-logo-transparent.png"
-  const logoWidth = 1536
-  const logoHeight = 400
+  const logoSrc = "/aulukya-logo.svg"
+  const logoWidth = 827
+  const logoHeight = 168
 
   if (mode === "dark") {
     return (
