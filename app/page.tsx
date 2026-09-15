@@ -220,8 +220,8 @@ export default function Page() {
               Complete Fire &amp; Safety Solutions in Chennai
             </p>
             <h1 className="mt-6 max-w-3xl font-heading text-5xl leading-[0.98] font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
-              Protecting lives.{" "}
-              <span className="text-red-500">Securing futures.</span>
+              Fire Safety Solutions for Businesses in{" "}
+              <span className="text-red-500">Chennai</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-white/72 sm:text-lg">
               Dependable fire protection, installation, maintenance and
