@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-export const siteUrl = "https://aulukya-fire-safety.example"
+export const siteUrl = "https://aulukyafires.com"
 export const companyName = "AULUKYA FIRE & SAFETY SOLUTIONS"
 export const shortName = "Aulukya"
 export const socialLinks = [
