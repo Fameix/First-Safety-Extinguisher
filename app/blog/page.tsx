@@ -50,9 +50,9 @@ export default function Page() {
       />
       <section className="bg-background py-14 sm:py-16 lg:py-20">
         <Container>
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Recent blog posts
-          </h1>
+          </h2>
 
           <div className="mt-9 grid gap-12 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-8 xl:gap-10">
             <article>
