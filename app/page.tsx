@@ -27,7 +27,7 @@ import { cn } from "@/lib/utils"
 
 const title = "Aulukya Fire & Safety Solutions | Fire Safety Company in Chennai"
 const description =
-  "Aulukya Fire & Safety Solutions is a fire safety company in Chennai providing fire safety solutions, fire extinguisher supply, fire alarm system installation, hydrant systems, AMC, audits and Fire NOC consulting."
+  "Aulukya Fire & Safety Solutions is a fire safety company in Chennai providing fire safety solutions, fire extinguisher, fire alarm, and Fire NOC services."
 
 export const metadata = {
   ...pageMetadata(title, description),
@@ -35,7 +35,7 @@ export const metadata = {
     ...pageMetadata(title, description).openGraph,
     images: [
       {
-        url: "/home-hero-banner-new.png",
+        url: "https://aulukyafires.com/home-hero-banner-new.png",
         width: 1871,
         height: 840,
         alt: "Aulukya Fire & Safety Solutions in Chennai",
@@ -44,7 +44,7 @@ export const metadata = {
   },
   twitter: {
     ...pageMetadata(title, description).twitter,
-    images: ["/home-hero-banner-new.png"],
+    images: ["https://aulukyafires.com/home-hero-banner-new.png"],
   },
 }
 
