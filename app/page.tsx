@@ -164,6 +164,13 @@ const jsonLd = {
   },
 }
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: companyName,
+  url: "https://aulukyafires.com/",
+}
+
 function SectionIntro({
   eyebrow,
   title,
@@ -199,6 +206,12 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c"),
         }}
       />
 
