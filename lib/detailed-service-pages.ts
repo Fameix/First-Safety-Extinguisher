@@ -790,18 +790,18 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
   audits: {
     hero: {
       eyebrow: "FIRE AUDITS",
-      title: "Know where your workplace stands on",
-      accent: "fire safety.",
+      title: "Fire safety audits for",
+      accent: "Chennai businesses.",
       description:
-        "Practical fire safety audits designed to identify risks, gaps and improvement opportunities across your workplace.",
+        "A practical fire safety audit in Chennai to identify workplace risks, compliance gaps and clear opportunities for improvement.",
       image: "/images/services/fire-audits/fire-audits-hero.png",
       imageAlt: "Fire safety audit being conducted",
     },
     intro: {
       eyebrow: "FIRE SAFETY AUDIT",
-      title: "A clearer view of your workplace fire safety.",
+      title: "A clearer view of fire safety across your Chennai workplace.",
       description:
-        "We review fire safety arrangements, equipment and workplace conditions to help identify practical improvements and compliance gaps.",
+        "Our fire audit services in Chennai review fire safety arrangements, equipment and workplace conditions to identify practical improvements and compliance gaps.",
       image: images.audit,
       imageAlt: "Workplace fire safety inspection",
       highlights: highlights([
@@ -813,9 +813,9 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
     },
     services: {
       eyebrow: "OUR AUDIT SERVICES",
-      title: "A practical review of readiness and risk.",
+      title: "Fire safety inspection and risk review for your workplace.",
       description:
-        "We examine the workplace and turn observations into clear, useful next steps.",
+        "Each fire safety inspection in Chennai examines workplace conditions and turns observations into clear, useful next steps.",
       items: cards([
         [
           "Site Inspection",
@@ -825,7 +825,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
         ],
         [
           "Risk Identification",
-          "We identify visible fire safety risks and areas requiring attention.",
+          "Our fire risk assessment in Chennai identifies visible hazards and areas requiring attention.",
           ShieldPlus,
           "/images/services/fire-audits/risk_identification.png",
         ],
@@ -837,7 +837,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
         ],
         [
           "Compliance Review",
-          "We identify gaps against applicable fire safety requirements.",
+          "We review fire safety compliance in Chennai workplaces and identify gaps against applicable requirements.",
           FileCheck2,
           "/images/services/fire-audits/compliance_review.png",
         ],
@@ -935,7 +935,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
     },
     faqs: [
       {
-        question: "What does a fire safety audit include?",
+        question: "What does a fire safety audit in Chennai include?",
         answer:
           "An audit can include a site review, equipment observations, risk identification, compliance-gap review and practical recommendations.",
       },
@@ -961,8 +961,9 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       },
     ],
     cta: {
-      title: "Need a clearer view of your fire safety?",
-      description: "Talk to our team about a practical fire safety audit.",
+      title: "Need a fire safety audit for your Chennai workplace?",
+      description:
+        "Talk to our team about a practical audit of your workplace fire safety arrangements.",
     },
   },
   noc: {
