@@ -3,8 +3,8 @@ import { pageMetadata } from "@/lib/site-data"
 import { detailedServicePages } from "@/lib/detailed-service-pages"
 
 export const metadata = pageMetadata(
-  "Fire Alarm Systems in Chennai | Aulukya",
-  "Aulukya supports fire alarm system supply, installation, testing, commissioning, and maintenance in Chennai.",
+  "Fire Alarm System Chennai | Aulukya",
+  "Aulukya supplies, installs, tests, commissions, maintains, and provides AMC support for fire alarm systems in Chennai.",
   "/fire-alarm-systems-chennai"
 )
 

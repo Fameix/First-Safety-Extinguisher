@@ -66,7 +66,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       title: "Early warning when every second",
       accent: "matters.",
       description:
-        "Reliable fire alarm systems designed to detect threats early and help protect people, property and operations.",
+        "Aulukya provides fire alarm system services in Chennai, helping protect people, property and operations through reliable early warning.",
       image: "/fire-alarm-systems-hero.png",
       imageAlt: "Fire alarm system protecting a workplace",
     },
@@ -74,7 +74,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       eyebrow: "FIRE ALARM CARE",
       title: "A dependable alarm system starts with the right detection.",
       description:
-        "We help businesses install, inspect and maintain fire alarm systems designed around their workplace, risk profile and safety requirements.",
+        "As a fire alarm supplier in Chennai, we support businesses with system supply, installation, inspection and maintenance suited to their workplace, risk profile and safety requirements.",
       image: "/assets/images/ChatGPT Image Aug 23, 2026, 09_20_25 AM.png",
       imageAlt: "Fire alarm detection equipment",
       highlights: highlights([
@@ -98,19 +98,19 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
         ],
         [
           "Installation",
-          "Professional installation planned around your building layout and safety requirements.",
+          "Fire alarm installation in Chennai planned around your building layout and safety requirements.",
           Hammer,
           "/assets/images/fire_alarm_installation_icon.png",
         ],
         [
           "Testing",
-          "Regular testing to confirm alarms, detectors and connected devices respond correctly.",
+          "Testing and commissioning to confirm alarms, detectors and connected devices respond correctly.",
           Gauge,
           "/assets/images/fire_alarm_testing_icon.png",
         ],
         [
           "Maintenance",
-          "Ongoing maintenance to keep the system reliable and ready when needed.",
+          "Fire alarm maintenance in Chennai to keep your system reliable and ready when needed.",
           Wrench,
           "/assets/images/fire_alarm_maintenance_icon.png",
         ],
@@ -121,8 +121,8 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
           "/assets/images/fire_alarm_replacement_icon.png",
         ],
         [
-          "Support",
-          "Responsive service support for alarm system issues, servicing and ongoing requirements.",
+          "AMC Support",
+          "Fire alarm AMC support in Chennai for planned testing, servicing and ongoing requirements.",
           Headphones,
           "/assets/images/fire_alarm_support_icon.png",
         ],
@@ -215,9 +215,9 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
           "Yes. We assess the existing building layout and recommend a practical installation approach.",
       },
       {
-        question: "Do you provide fire alarm maintenance?",
+        question: "Do you provide fire alarm maintenance in Chennai?",
         answer:
-          "Yes. We provide planned inspection, testing and maintenance support.",
+          "Yes. We provide planned inspection, testing, maintenance and AMC support for Chennai workplaces.",
       },
       {
         question: "Can you replace damaged alarm components?",
