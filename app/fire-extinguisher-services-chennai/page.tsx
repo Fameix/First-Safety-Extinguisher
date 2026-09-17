@@ -24,8 +24,8 @@ import { pageMetadata } from "@/lib/site-data"
 import { cn } from "@/lib/utils"
 
 export const metadata = pageMetadata(
-  "Fire Extinguisher Service in Chennai | Aulukya",
-  "Complete fire extinguisher inspection, maintenance, refilling, testing, replacement and supply for Chennai businesses.",
+  "Fire Extinguisher Service Chennai | Aulukya",
+  "Aulukya provides fire extinguisher service in Chennai, including supply, installation, inspection, maintenance and refilling for businesses.",
   "/fire-extinguisher-services-chennai"
 )
 
@@ -40,7 +40,7 @@ const services = [
   },
   {
     title: "Maintenance",
-    text: "Professional maintenance to keep fire extinguishers reliable, functional and in good working condition.",
+    text: "Fire extinguisher maintenance in Chennai to keep workplace units reliable, functional and in good working condition.",
     image: "/images/services/extinguisher/Maintenance(1).png",
     imageStyle: { height: 65, top: -1, left: -18 },
     imageWidth: 1536,
@@ -48,7 +48,7 @@ const services = [
   },
   {
     title: "Refill",
-    text: "Timely refilling of extinguishing agents to restore protection after use or when required.",
+    text: "Fire extinguisher refilling in Chennai to restore protection after use or when maintenance indicates it is required.",
     image: "/images/services/extinguisher/Refill(1).png",
     imageStyle: { height: 63, top: -1, left: -6 },
     imageWidth: 1340,
@@ -72,7 +72,7 @@ const services = [
   },
   {
     title: "Supply",
-    text: "Reliable supply of fire extinguishers selected to match your workplace and fire protection requirements.",
+    text: "A fire extinguisher supplier in Chennai for units selected to match workplace risks and fire protection requirements.",
     image: "/images/services/extinguisher/Supply(1).png",
     imageStyle: { height: 63, top: -2, left: -14 },
     imageWidth: 1536,
@@ -181,8 +181,9 @@ export default function Page() {
               <span className="text-red-500">ready when it matters.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-white/72 sm:text-lg">
-              Inspection, maintenance, refill, testing and supply for businesses
-              that need dependable fire protection on site.
+              Aulukya provides fire extinguisher service in Chennai, including
+              supply, installation, inspection, maintenance and refilling for
+              businesses and workplaces.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
@@ -216,7 +217,7 @@ export default function Page() {
             <SectionIntro
               eyebrow="Extinguisher care"
               title="A small piece of equipment with a critical job."
-              copy="A fire extinguisher is only useful when it is correctly selected, accessible and ready to perform. Aulukya gives your team a straightforward service partner for the checks and upkeep that keep fire protection visible and dependable."
+              copy="A fire extinguisher is only useful when it is correctly selected, installed, accessible and ready to perform. Aulukya supports Chennai businesses with practical inspection and upkeep that keep workplace fire protection visible and dependable."
             />
             <div className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-1 md:grid-cols-2">
               {[
@@ -255,7 +256,7 @@ export default function Page() {
             light
             eyebrow="Fire extinguisher services"
             title="Our Fire Extinguisher Services"
-            copy="Reliable fire extinguisher services to keep your workplace protected, compliant and ready when it matters."
+            copy="From fire extinguisher installation in Chennai to planned inspection, maintenance and refilling, Aulukya helps keep workplace equipment ready when it matters."
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map(
