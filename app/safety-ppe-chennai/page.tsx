@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import { DetailedServicePage } from "@/components/site/detailed-service-page"
 import { pageMetadata } from "@/lib/site-data"
 import { detailedServicePages } from "@/lib/detailed-service-pages"
@@ -8,6 +10,92 @@ export const metadata = pageMetadata(
   "/safety-ppe-chennai"
 )
 
+const internalLinkClassName = "font-bold text-foreground no-underline"
+
 export default function Page() {
-  return <DetailedServicePage content={detailedServicePages.ppe} />
+  const ppeContent = detailedServicePages.ppe
+  const content = {
+    ...ppeContent,
+    intro: {
+      ...ppeContent.intro,
+      description: (
+        <>
+          {ppeContent.intro.description} For a broader review of workplace
+          hazards and safety gaps, explore our{" "}
+          <Link href="/fire-audits-chennai" className={internalLinkClassName}>
+            Fire Audits
+          </Link>
+          .
+        </>
+      ),
+    },
+    services: {
+      ...ppeContent.services,
+      description: (
+        <>
+          {ppeContent.services.description} PPE can also form part of a wider
+          protection plan alongside{" "}
+          <Link
+            href="/fire-extinguisher-services-chennai"
+            className={internalLinkClassName}
+          >
+            Fire Extinguisher Services
+          </Link>
+          ,{" "}
+          <Link
+            href="/fire-alarm-systems-chennai"
+            className={internalLinkClassName}
+          >
+            Fire Alarm Systems
+          </Link>
+          , and{" "}
+          <Link
+            href="/fire-hydrant-systems-chennai"
+            className={internalLinkClassName}
+          >
+            Fire Hydrant Systems
+          </Link>
+          .
+        </>
+      ),
+    },
+    process: ppeContent.process.map((step, index) => {
+      if (index === 0) {
+        return {
+          ...step,
+          text: (
+            <>
+              {step.text} Where statutory approval planning is involved, our{" "}
+              <Link
+                href="/fire-noc-consulting-chennai"
+                className={internalLinkClassName}
+              >
+                Fire NOC Consulting
+              </Link>{" "}
+              can support the wider compliance process.
+            </>
+          ),
+        }
+      }
+
+      return step
+    }),
+    feature: {
+      ...ppeContent.feature,
+      description: (
+        <>
+          {ppeContent.feature.description} Pairing suitable PPE with planned{" "}
+          <Link
+            href="/fire-safety-amc-chennai"
+            className={internalLinkClassName}
+          >
+            Fire Safety AMC
+          </Link>{" "}
+          can support wider workplace readiness.
+        </>
+      ),
+    },
+  } as unknown as typeof ppeContent
+
+  return <DetailedServicePage content={content} />
 }
