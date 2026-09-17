@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import type { ReactNode } from "react"
 import {
   ArrowRight,
   ClipboardCheck,
@@ -126,7 +127,7 @@ function SectionIntro({
 }: {
   eyebrow: string
   title: string
-  copy?: string
+  copy?: ReactNode
   light?: boolean
 }) {
   return (
@@ -217,7 +218,22 @@ export default function Page() {
             <SectionIntro
               eyebrow="Extinguisher care"
               title="A small piece of equipment with a critical job."
-              copy="A fire extinguisher is only useful when it is correctly selected, installed, accessible and ready to perform. Aulukya supports Chennai businesses with practical inspection and upkeep that keep workplace fire protection visible and dependable."
+              copy={
+                <>
+                  A fire extinguisher is only useful when it is correctly
+                  selected, installed, accessible and ready to perform. Aulukya
+                  supports Chennai businesses with practical inspection and
+                  upkeep that keep workplace fire protection visible and
+                  dependable, including ongoing support through a{" "}
+                  <Link
+                    href="/fire-safety-amc-chennai"
+                    className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                  >
+                    Fire Safety AMC
+                  </Link>
+                  .
+                </>
+              }
             />
             <div className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-1 md:grid-cols-2">
               {[
@@ -256,7 +272,28 @@ export default function Page() {
             light
             eyebrow="Fire extinguisher services"
             title="Our Fire Extinguisher Services"
-            copy="From fire extinguisher installation in Chennai to planned inspection, maintenance and refilling, Aulukya helps keep workplace equipment ready when it matters."
+            copy={
+              <>
+                From fire extinguisher installation in Chennai to planned
+                inspection, maintenance and refilling, Aulukya helps keep
+                workplace equipment ready when it matters. For broader
+                protection, explore our{" "}
+                <Link
+                  href="/fire-alarm-systems-chennai"
+                  className="font-medium text-zinc-950 underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                >
+                  Fire Alarm Systems
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/fire-hydrant-systems-chennai"
+                  className="font-medium text-zinc-950 underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                >
+                  Fire Hydrant Systems
+                </Link>
+                .
+              </>
+            }
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map(
@@ -375,7 +412,15 @@ export default function Page() {
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
                 We help you choose suitable equipment for the spaces and risks
-                present at your workplace.
+                present at your workplace. Our{" "}
+                <Link
+                  href="/fire-audits-chennai"
+                  className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                >
+                  Fire Audits
+                </Link>{" "}
+                can help identify wider fire safety priorities across your
+                site.
               </p>
             </div>
 
