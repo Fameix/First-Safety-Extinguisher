@@ -1,4 +1,9 @@
-import { DetailedServicePage } from "@/components/site/detailed-service-page"
+import Link from "next/link"
+
+import {
+  DetailedServicePage,
+  type DetailedServiceContent,
+} from "@/components/site/detailed-service-page"
 import { pageMetadata } from "@/lib/site-data"
 import { detailedServicePages } from "@/lib/detailed-service-pages"
 
@@ -8,6 +13,62 @@ export const metadata = pageMetadata(
   "/fire-hydrant-systems-chennai"
 )
 
+const hydrantContent = {
+  ...detailedServicePages.hydrant,
+  intro: {
+    ...detailedServicePages.hydrant.intro,
+    description: (
+      <>
+        Our fire hydrant installation in Chennai is planned around your
+        building, operations and wider fire fighting system needs, including
+        coordination with <Link href="/fire-alarm-systems-chennai">Fire Alarm Systems</Link> and{" "}
+        <Link href="/fire-extinguisher-services-chennai">Fire Extinguisher Services</Link>, with
+        inspection and maintenance support to help keep the system ready.
+      </>
+    ),
+  },
+  services: {
+    ...detailedServicePages.hydrant.services,
+    description: (
+      <>
+        Practical support across system supply, installation, inspection,
+        testing, maintenance and <Link href="/fire-safety-amc-chennai">Fire Safety AMC</Link> in
+        Chennai.
+      </>
+    ),
+  },
+  process: detailedServicePages.hydrant.process.map((step, index) => {
+    if (index === 0) {
+      return {
+        ...step,
+        text: (
+          <>
+            We review your building layout, existing system, fire protection
+            needs and related <Link href="/safety-ppe-chennai">Safety PPE</Link> requirements
+            through a practical site assessment. For a broader compliance
+            review, explore our <Link href="/fire-audits-chennai">Fire Audits</Link>.
+          </>
+        ),
+      }
+    }
+
+    if (index === 1) {
+      return {
+        ...step,
+        text: (
+          <>
+            We identify practical hydrant solutions suited to your site and
+            coordinate system planning with relevant{" "}
+            <Link href="/fire-noc-consulting-chennai">Fire NOC Consulting</Link> requirements.
+          </>
+        ),
+      }
+    }
+
+    return step
+  }),
+} as unknown as DetailedServiceContent
+
 export default function Page() {
-  return <DetailedServicePage content={detailedServicePages.hydrant} />
+  return <DetailedServicePage content={hydrantContent} />
 }
