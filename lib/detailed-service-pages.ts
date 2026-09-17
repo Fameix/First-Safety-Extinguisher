@@ -239,10 +239,10 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
   hydrant: {
     hero: {
       eyebrow: "HYDRANT SYSTEMS",
-      title: "Reliable water-based protection when it",
-      accent: "matters most.",
+      title: "Fire Hydrant System",
+      accent: "Chennai.",
       description:
-        "Hydrant system installation, maintenance and support designed to help businesses stay prepared for fire emergencies.",
+        "Aulukya provides fire hydrant system supply, installation, testing, maintenance and AMC support for businesses and workplaces across Chennai.",
       image: "/hydrant-systems-hero.png",
       imageAlt: "Fire hydrant system pipework",
     },
@@ -251,7 +251,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       title:
         "A reliable hydrant system starts with proper planning and maintenance.",
       description:
-        "We support hydrant systems with practical installation, inspection and maintenance services based on your building, operations and fire safety requirements.",
+        "Our fire hydrant installation in Chennai is planned around your building, operations and wider fire fighting system needs, with inspection and maintenance support to help keep the system ready.",
       image: "/assets/images/hydrant-system-care.png",
       imageAlt: "Hydrant installation at a facility",
       highlights: highlights([
@@ -265,7 +265,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       eyebrow: "OUR HYDRANT SERVICES",
       title: "Everything your hydrant system needs to stay ready.",
       description:
-        "Practical support across installation, inspection, testing and maintenance.",
+        "Practical support across system supply, installation, inspection, testing, maintenance and AMC in Chennai.",
       roomyImageSpacing: true,
       items: cards([
         [
@@ -297,7 +297,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
         ],
         [
           "Maintenance",
-          "Regular servicing to keep hydrant equipment ready for emergency use.",
+          "Fire hydrant maintenance in Chennai, with regular servicing to keep equipment ready for emergency use.",
           Wrench,
           "/assets/images/Maintenance (3).png",
           1536,
@@ -408,7 +408,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       {
         question: "Do you maintain existing hydrant systems?",
         answer:
-          "Yes. We inspect and maintain existing systems based on their condition and service needs.",
+          "Yes. Our fire hydrant maintenance and AMC support in Chennai covers inspection and servicing based on the system's condition and needs.",
       },
       {
         question: "Can you inspect hydrant system pressure?",
@@ -429,7 +429,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
     cta: {
       title: "Need dependable hydrant system support?",
       description:
-        "Talk to our team about installation, testing and maintenance.",
+        "Talk to our team about fire hydrant installation, testing, maintenance and AMC in Chennai.",
     },
   },
   ppe: {
