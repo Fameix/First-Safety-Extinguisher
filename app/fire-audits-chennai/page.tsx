@@ -9,6 +9,25 @@ export const metadata = pageMetadata(
   "/fire-audits-chennai"
 )
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fire Safety Audits",
+  serviceType: "Fire Safety Audits",
+  url: "https://aulukyafires.com/fire-audits-chennai",
+  description:
+    "A practical fire safety audit in Chennai to identify workplace risks, compliance gaps and clear opportunities for improvement.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AULUKYA FIRE & SAFETY SOLUTIONS",
+    url: "https://aulukyafires.com/",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Chennai",
+  },
+}
+
 export default function Page() {
   const auditContent = detailedServicePages.audits
   const internalLinkClassName = "font-bold text-foreground no-underline"
@@ -109,5 +128,15 @@ export default function Page() {
     },
   }
 
-  return <DetailedServicePage content={content} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <DetailedServicePage content={content} />
+    </>
+  )
 }

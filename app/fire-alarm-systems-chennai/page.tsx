@@ -11,6 +11,25 @@ export const metadata = pageMetadata(
   "/fire-alarm-systems-chennai"
 )
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fire Alarm Systems",
+  serviceType: "Fire Alarm Systems",
+  url: "https://aulukyafires.com/fire-alarm-systems-chennai",
+  description:
+    "Aulukya provides fire alarm system services in Chennai, helping protect people, property and operations through reliable early warning.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AULUKYA FIRE & SAFETY SOLUTIONS",
+    url: "https://aulukyafires.com/",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Chennai",
+  },
+}
+
 const contextualCopy = (content: ReactNode) => content as unknown as string
 
 const internalLinkClassName = "font-bold text-foreground no-underline"
@@ -121,5 +140,15 @@ export default function Page() {
     }),
   }
 
-  return <DetailedServicePage content={content} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <DetailedServicePage content={content} />
+    </>
+  )
 }

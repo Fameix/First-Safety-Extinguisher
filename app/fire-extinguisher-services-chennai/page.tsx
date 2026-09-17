@@ -30,6 +30,25 @@ export const metadata = pageMetadata(
   "/fire-extinguisher-services-chennai"
 )
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fire Extinguisher Services",
+  serviceType: "Fire Extinguisher Services",
+  url: "https://aulukyafires.com/fire-extinguisher-services-chennai",
+  description:
+    "Aulukya provides fire extinguisher service in Chennai, including supply, installation, inspection, maintenance and refilling for businesses and workplaces.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AULUKYA FIRE & SAFETY SOLUTIONS",
+    url: "https://aulukyafires.com/",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Chennai",
+  },
+}
+
 const services = [
   {
     title: "Inspection",
@@ -160,6 +179,12 @@ function SectionIntro({
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <section className="relative isolate -mt-[88px] min-h-[760px] overflow-hidden bg-zinc-950 pt-[88px] text-white lg:min-h-[850px]">
         <Image
           src="/fire-extinguisher-services-hero.png"

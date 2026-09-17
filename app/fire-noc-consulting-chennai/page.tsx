@@ -10,6 +10,25 @@ export const metadata = pageMetadata(
   "/fire-noc-consulting-chennai"
 )
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fire NOC Consulting",
+  serviceType: "Fire NOC Consulting",
+  url: "https://aulukyafires.com/fire-noc-consulting-chennai",
+  description:
+    "Practical fire NOC consulting in Chennai to help businesses understand applicable requirements, prepare documentation and navigate the approval process.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AULUKYA FIRE & SAFETY SOLUTIONS",
+    url: "https://aulukyafires.com/",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Chennai",
+  },
+}
+
 const serviceLinkClassName = "font-bold text-zinc-950 no-underline"
 
 const nocContent = {
@@ -83,8 +102,16 @@ const nocContent = {
 
 export default function Page() {
   return (
-    <DetailedServicePage
-      content={nocContent as unknown as typeof detailedServicePages.noc}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <DetailedServicePage
+        content={nocContent as unknown as typeof detailedServicePages.noc}
+      />
+    </>
   )
 }

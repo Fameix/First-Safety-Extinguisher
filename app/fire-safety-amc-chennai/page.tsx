@@ -10,6 +10,25 @@ export const metadata = pageMetadata(
   "/fire-safety-amc-chennai"
 )
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fire Safety AMC",
+  serviceType: "Fire Safety AMC",
+  url: "https://aulukyafires.com/fire-safety-amc-chennai",
+  description:
+    "Aulukya provides planned inspection, testing, maintenance and servicing for essential fire safety equipment in Chennai.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AULUKYA FIRE & SAFETY SOLUTIONS",
+    url: "https://aulukyafires.com/",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Chennai",
+  },
+}
+
 const amcIntro =
   "Our fire safety maintenance in Chennai helps businesses care for essential equipment through planned inspections, testing, servicing and AMC support."
 
@@ -60,7 +79,17 @@ function linkAmcServices(node: ReactNode): ReactNode {
 }
 
 export default function Page() {
-  return linkAmcServices(
-    DetailedServicePage({ content: detailedServicePages.amc })
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      {linkAmcServices(
+        DetailedServicePage({ content: detailedServicePages.amc })
+      )}
+    </>
   )
 }

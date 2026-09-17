@@ -13,6 +13,25 @@ export const metadata = pageMetadata(
   "/fire-hydrant-systems-chennai"
 )
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fire Hydrant Systems",
+  serviceType: "Fire Hydrant Systems",
+  url: "https://aulukyafires.com/fire-hydrant-systems-chennai",
+  description:
+    "Aulukya provides fire hydrant system supply, installation, testing, maintenance and AMC support for businesses and workplaces across Chennai.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AULUKYA FIRE & SAFETY SOLUTIONS",
+    url: "https://aulukyafires.com/",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Chennai",
+  },
+}
+
 const internalLinkClassName = "font-bold text-foreground no-underline"
 
 const hydrantContent = {
@@ -100,5 +119,15 @@ const hydrantContent = {
 } as unknown as DetailedServiceContent
 
 export default function Page() {
-  return <DetailedServicePage content={hydrantContent} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <DetailedServicePage content={hydrantContent} />
+    </>
+  )
 }

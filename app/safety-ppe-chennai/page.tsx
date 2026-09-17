@@ -10,6 +10,25 @@ export const metadata = pageMetadata(
   "/safety-ppe-chennai"
 )
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Safety PPE",
+  serviceType: "Safety PPE",
+  url: "https://aulukyafires.com/safety-ppe-chennai",
+  description:
+    "Aulukya supplies workplace safety PPE selected around your people, operations and specific workplace risks.",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "AULUKYA FIRE & SAFETY SOLUTIONS",
+    url: "https://aulukyafires.com/",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Chennai",
+  },
+}
+
 const internalLinkClassName = "font-bold text-foreground no-underline"
 
 export default function Page() {
@@ -97,5 +116,15 @@ export default function Page() {
     },
   } as unknown as typeof ppeContent
 
-  return <DetailedServicePage content={content} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <DetailedServicePage content={content} />
+    </>
+  )
 }
