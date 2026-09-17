@@ -968,19 +968,19 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
   },
   noc: {
     hero: {
-      eyebrow: "FIRE NOC CONSULTING",
-      title: "Clear guidance for fire safety",
-      accent: "approvals.",
+      eyebrow: "FIRE NOC CONSULTING CHENNAI",
+      title: "Fire NOC consultant",
+      accent: "in Chennai.",
       description:
-        "Practical fire NOC consulting support to help businesses understand requirements, documentation and approval processes.",
+        "Practical fire NOC consulting in Chennai to help businesses understand applicable requirements, prepare documentation and navigate the approval process.",
       image: "/fire-noc-consulting-hero.png",
-      imageAlt: "Fire NOC documentation and consulting",
+      imageAlt: "Fire NOC consultant reviewing documentation in Chennai",
     },
     intro: {
-      eyebrow: "FIRE NOC SUPPORT",
-      title: "Navigate fire safety requirements with greater clarity.",
+      eyebrow: "FIRE NOC ASSISTANCE CHENNAI",
+      title: "Navigate Fire NOC requirements with greater clarity.",
       description:
-        "We help businesses understand fire safety requirements and prepare for the documentation, systems and approvals needed for their workplace.",
+        "Our Fire NOC assistance in Chennai helps businesses understand the requirements relevant to their workplace, review fire safety arrangements and prepare the information and documents needed for the applicable process.",
       image: "/fire-noc-approval.png",
       imageAlt: "Consultation about fire safety requirements",
       highlights: highlights([
@@ -992,19 +992,19 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
     },
     services: {
       eyebrow: "OUR NOC SERVICES",
-      title: "Clearer preparation at every stage.",
+      title: "Fire NOC services for clearer preparation at every stage.",
       description:
-        "We help organize requirements, documentation and practical readiness for the approval process.",
+        "Our Fire NOC services in Chennai cover requirement review, documentation support, safety assessment, compliance guidance and follow-up through the applicable approval process.",
       items: cards([
         [
           "Requirement Review",
-          "We review your site and understand the applicable fire safety requirements.",
+          "We review your site or project information to help identify the applicable fire safety requirements.",
           SearchCheck,
           "/images/services/noc/requirement-review.png",
         ],
         [
           "Documentation Support",
-          "Guidance on the documents and information required for the approval process.",
+          "Guidance on organizing the documents and information needed for the applicable approval process.",
           FileCheck2,
           "/images/services/noc/documentation-support.png",
         ],
@@ -1016,13 +1016,13 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
         ],
         [
           "Compliance Guidance",
-          "Practical guidance to help align your workplace with applicable requirements.",
+          "Practical fire safety compliance guidance in Chennai to help address identified requirements at your workplace.",
           ShieldCheck,
           "/images/services/noc/compliance-guidance.png",
         ],
         [
           "NOC Support",
-          "Support throughout the fire NOC consulting and approval process.",
+          "Consulting support as you prepare for and move through the applicable Fire NOC process.",
           CheckCircle2,
           "/images/services/noc/noc-support.png",
         ],
@@ -1067,7 +1067,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
     process: cards([
       [
         "Understand",
-        "We review your workplace, project and fire safety requirements.",
+        "We review your workplace or project information and fire safety requirements.",
         SearchCheck,
       ],
       [
@@ -1090,7 +1090,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       eyebrow: "CONSULTING SUPPORT",
       title: "From requirements to a clearer next step.",
       description:
-        "We help connect site readiness, documentation and process guidance.",
+        "Our consulting support connects site readiness, documentation and process guidance so you can approach each step with greater clarity.",
       items: [
         {
           title: "Requirement Review",
@@ -1128,18 +1128,18 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       {
         question: "Can you support the Fire NOC process?",
         answer:
-          "Yes. We provide consulting, preparation and follow-up support through the process.",
+          "Yes. We provide Fire NOC consulting in Chennai, including requirement review, documentation and compliance preparation, process guidance and follow-up support.",
       },
       {
         question: "Do you provide compliance guidance?",
         answer:
-          "Yes. We provide practical guidance on identified fire safety requirements and preparation needs.",
+          "Yes. We provide practical fire safety compliance guidance on identified requirements and preparation needs for workplaces in Chennai.",
       },
     ],
     cta: {
-      title: "Need guidance with Fire NOC requirements?",
+      title: "Need a Fire NOC consultant in Chennai?",
       description:
-        "Talk to our team about fire safety approval and compliance support.",
+        "Talk to our team about Fire NOC requirements, documentation and compliance support.",
     },
   },
 }
