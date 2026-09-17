@@ -27,14 +27,34 @@ export const metadata = pageMetadata(title, description, "/industries")
 const industries = [
   {
     title: "Commercial Buildings",
-    description:
-      "Fire protection solutions for offices and commercial spaces, helping protect people, property and daily business operations.",
+    description: (
+      <>
+        <Link
+          href="/fire-alarm-systems-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          Fire protection solutions
+        </Link>{" "}
+        for offices and commercial spaces, helping protect people, property and
+        daily business operations.
+      </>
+    ),
     image: "/commercial-buildings.png",
   },
   {
     title: "Industrial Facilities",
-    description:
-      "Reliable fire safety support for industrial workplaces, covering essential equipment, maintenance and compliance requirements.",
+    description: (
+      <>
+        Reliable fire safety support for industrial workplaces, covering{" "}
+        <Link
+          href="/fire-extinguisher-services-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          essential equipment
+        </Link>
+        , maintenance and compliance requirements.
+      </>
+    ),
     image: "/industrial-facilities.png",
   },
   {
@@ -45,20 +65,52 @@ const industries = [
   },
   {
     title: "Educational Institutions",
-    description:
-      "Fire safety solutions for schools and colleges, supporting safer learning environments with equipment and compliance support.",
+    description: (
+      <>
+        Fire safety solutions for schools and colleges, supporting safer
+        learning environments with equipment and{" "}
+        <Link
+          href="/fire-noc-consulting-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          compliance support
+        </Link>
+        .
+      </>
+    ),
     image: "/educational-institutions.png",
   },
   {
     title: "Healthcare Facilities",
-    description:
-      "Reliable fire protection for hospitals and clinics, with suitable equipment, maintenance and compliance support.",
+    description: (
+      <>
+        Reliable fire protection for hospitals and clinics, with suitable
+        equipment,{" "}
+        <Link
+          href="/fire-safety-amc-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          maintenance
+        </Link>{" "}
+        and compliance support.
+      </>
+    ),
     image: "/healthcare-facilities.png",
   },
   {
     title: "Residential & Apartments",
-    description:
-      "Fire safety support for apartments and residential buildings, helping protect residents, common areas and property.",
+    description: (
+      <>
+        <Link
+          href="/fire-hydrant-systems-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          Fire safety support
+        </Link>{" "}
+        for apartments and residential buildings, helping protect residents,
+        common areas and property.
+      </>
+    ),
     image: "/residential-buildings.png",
   },
   {
@@ -69,8 +121,18 @@ const industries = [
   },
   {
     title: "Warehouses & Logistics",
-    description:
-      "Fire safety solutions for warehouses and logistics facilities, helping protect stored goods, infrastructure and operations.",
+    description: (
+      <>
+        <Link
+          href="/fire-audits-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          Fire safety solutions
+        </Link>{" "}
+        for warehouses and logistics facilities, helping protect stored goods,
+        infrastructure and operations.
+      </>
+    ),
     image: "/warehouses-logistics.png",
   },
 ] as const
