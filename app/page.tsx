@@ -57,7 +57,7 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: "Fire Extinguishers",
+    title: "Fire Extinguisher Services",
     text: "Sales, refilling and servicing for workplaces and buildings.",
     href: "/fire-extinguisher-services-chennai",
     image: "/service-fire-extinguisher.png",
@@ -69,7 +69,7 @@ const services: Service[] = [
     image: "/service-fire-alarm-system.png",
   },
   {
-    title: "Hydrant Systems",
+    title: "Fire Hydrant Systems",
     text: "Design, supply, installation and AMC support.",
     href: "/fire-hydrant-systems-chennai",
     image: "/service-hydrant-system.png",
@@ -81,7 +81,7 @@ const services: Service[] = [
     image: "/service-safety-ppe.png",
   },
   {
-    title: "AMC Services",
+    title: "Fire Safety AMC",
     text: "Scheduled maintenance for fire protection equipment.",
     href: "/fire-safety-amc-chennai",
     image: "/home-service-amc-3d.png",
@@ -283,8 +283,8 @@ export default function Page() {
           <div className="order-2 lg:order-1">
             <SectionIntro
               eyebrow="About Aulukya"
-              title="Trusted fire & safety solutions in Chennai"
-              copy="Aulukya helps businesses protect people, property and operations with dependable fire protection, safety equipment, installation, maintenance and compliance support."
+              title="A fire protection company in Chennai for businesses"
+              copy="As a fire safety company in Chennai, Aulukya helps businesses protect people, property and operations with dependable fire protection, safety equipment, installation, maintenance and compliance support."
             />
             <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 pt-6 text-sm font-semibold">
               <span className="flex items-center gap-2">
@@ -320,8 +320,9 @@ export default function Page() {
               Complete Fire &amp; Safety Solutions
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-600">
-              One experienced partner for essential fire protection systems,
-              workplace safety and ongoing compliance support.
+              Our fire safety solutions in Chennai cover essential fire
+              protection systems, workplace safety and ongoing compliance
+              support.
             </p>
           </div>
 
