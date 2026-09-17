@@ -13,8 +13,7 @@ export const metadata = pageMetadata(
 
 const contextualCopy = (content: ReactNode) => content as unknown as string
 
-const internalLinkClassName =
-  "font-medium text-current underline decoration-current/40 underline-offset-2 transition-colors hover:text-primary"
+const internalLinkClassName = "font-bold text-foreground no-underline"
 
 export default function Page() {
   const alarmContent = detailedServicePages.alarm
@@ -24,8 +23,8 @@ export default function Page() {
       ...alarmContent.intro,
       description: contextualCopy(
         <>
-          {alarmContent.intro.description} For broader site protection, alarms can
-          work alongside{" "}
+          {alarmContent.intro.description} For broader site protection, alarms
+          can work alongside{" "}
           <Link
             href="/fire-extinguisher-services-chennai"
             className={internalLinkClassName}
@@ -69,7 +68,8 @@ export default function Page() {
       ...alarmContent.feature,
       description: contextualCopy(
         <>
-          {alarmContent.feature.description} Complement these system controls with{" "}
+          {alarmContent.feature.description} Complement these system controls
+          with{" "}
           <Link href="/safety-ppe-chennai" className={internalLinkClassName}>
             Safety PPE
           </Link>{" "}
@@ -96,7 +96,10 @@ export default function Page() {
         }
       }
 
-      if (faq.question === "Can you install fire alarm systems for existing buildings?") {
+      if (
+        faq.question ===
+        "Can you install fire alarm systems for existing buildings?"
+      ) {
         return {
           ...faq,
           answer: contextualCopy(

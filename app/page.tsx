@@ -229,9 +229,9 @@ export default function Page() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ size: "lg" }),
                   "h-12 w-full rounded-lg px-6 sm:w-auto"
@@ -355,7 +355,7 @@ export default function Page() {
                     </p>
                     <Link
                       href={service.href}
-                      className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-red-400 hover:text-red-300"
+                      className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-bold text-zinc-950 no-underline"
                     >
                       {service.title}{" "}
                       <ArrowRight
@@ -384,19 +384,19 @@ export default function Page() {
                 const Icon = benefit.icon
 
                 return (
-                <div key={benefit.title} className="pt-5">
-                  <div className="flex items-center gap-3">
-                    <IconBadge size="sm" className="bg-red-50 text-red-600">
-                      <Icon className="size-4" aria-hidden="true" />
-                    </IconBadge>
-                    <h3 className="font-heading font-semibold">
-                      {benefit.title}
-                    </h3>
+                  <div key={benefit.title} className="pt-5">
+                    <div className="flex items-center gap-3">
+                      <IconBadge size="sm" className="bg-red-50 text-red-600">
+                        <Icon className="size-4" aria-hidden="true" />
+                      </IconBadge>
+                      <h3 className="font-heading font-semibold">
+                        {benefit.title}
+                      </h3>
+                    </div>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      {benefit.text}
+                    </p>
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    {benefit.text}
-                  </p>
-                </div>
                 )
               })}
             </div>
@@ -460,7 +460,7 @@ export default function Page() {
 
       <CTASection
         title="Need reliable fire safety solutions?"
-        description="We&apos;re here to help you keep what matters safe with clear, responsible fire safety support in Chennai."
+        description="We're here to help you keep what matters safe with clear, responsible fire safety support in Chennai."
         label="Call Us Today"
         href="/contact"
       />

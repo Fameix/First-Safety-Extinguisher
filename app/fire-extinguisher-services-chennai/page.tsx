@@ -227,7 +227,7 @@ export default function Page() {
                   dependable, including ongoing support through a{" "}
                   <Link
                     href="/fire-safety-amc-chennai"
-                    className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                    className="font-bold text-foreground no-underline"
                   >
                     Fire Safety AMC
                   </Link>
@@ -280,14 +280,14 @@ export default function Page() {
                 protection, explore our{" "}
                 <Link
                   href="/fire-alarm-systems-chennai"
-                  className="font-medium text-zinc-950 underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                  className="font-bold text-foreground no-underline"
                 >
                   Fire Alarm Systems
                 </Link>{" "}
                 and{" "}
                 <Link
                   href="/fire-hydrant-systems-chennai"
-                  className="font-medium text-zinc-950 underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                  className="font-bold text-foreground no-underline"
                 >
                   Fire Hydrant Systems
                 </Link>
@@ -415,12 +415,11 @@ export default function Page() {
                 present at your workplace. Our{" "}
                 <Link
                   href="/fire-audits-chennai"
-                  className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+                  className="font-bold text-foreground no-underline"
                 >
                   Fire Audits
                 </Link>{" "}
-                can help identify wider fire safety priorities across your
-                site.
+                can help identify wider fire safety priorities across your site.
               </p>
             </div>
 

@@ -13,6 +13,8 @@ export const metadata = pageMetadata(
   "/fire-hydrant-systems-chennai"
 )
 
+const internalLinkClassName = "font-bold text-foreground no-underline"
+
 const hydrantContent = {
   ...detailedServicePages.hydrant,
   intro: {
@@ -21,9 +23,21 @@ const hydrantContent = {
       <>
         Our fire hydrant installation in Chennai is planned around your
         building, operations and wider fire fighting system needs, including
-        coordination with <Link href="/fire-alarm-systems-chennai">Fire Alarm Systems</Link> and{" "}
-        <Link href="/fire-extinguisher-services-chennai">Fire Extinguisher Services</Link>, with
-        inspection and maintenance support to help keep the system ready.
+        coordination with{" "}
+        <Link
+          href="/fire-alarm-systems-chennai"
+          className={internalLinkClassName}
+        >
+          Fire Alarm Systems
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/fire-extinguisher-services-chennai"
+          className={internalLinkClassName}
+        >
+          Fire Extinguisher Services
+        </Link>
+        , with inspection and maintenance support to help keep the system ready.
       </>
     ),
   },
@@ -32,8 +46,11 @@ const hydrantContent = {
     description: (
       <>
         Practical support across system supply, installation, inspection,
-        testing, maintenance and <Link href="/fire-safety-amc-chennai">Fire Safety AMC</Link> in
-        Chennai.
+        testing, maintenance and{" "}
+        <Link href="/fire-safety-amc-chennai" className={internalLinkClassName}>
+          Fire Safety AMC
+        </Link>{" "}
+        in Chennai.
       </>
     ),
   },
@@ -44,9 +61,16 @@ const hydrantContent = {
         text: (
           <>
             We review your building layout, existing system, fire protection
-            needs and related <Link href="/safety-ppe-chennai">Safety PPE</Link> requirements
-            through a practical site assessment. For a broader compliance
-            review, explore our <Link href="/fire-audits-chennai">Fire Audits</Link>.
+            needs and related{" "}
+            <Link href="/safety-ppe-chennai" className={internalLinkClassName}>
+              Safety PPE
+            </Link>{" "}
+            requirements through a practical site assessment. For a broader
+            compliance review, explore our{" "}
+            <Link href="/fire-audits-chennai" className={internalLinkClassName}>
+              Fire Audits
+            </Link>
+            .
           </>
         ),
       }
@@ -59,7 +83,13 @@ const hydrantContent = {
           <>
             We identify practical hydrant solutions suited to your site and
             coordinate system planning with relevant{" "}
-            <Link href="/fire-noc-consulting-chennai">Fire NOC Consulting</Link> requirements.
+            <Link
+              href="/fire-noc-consulting-chennai"
+              className={internalLinkClassName}
+            >
+              Fire NOC Consulting
+            </Link>{" "}
+            requirements.
           </>
         ),
       }
