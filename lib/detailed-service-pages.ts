@@ -615,10 +615,10 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
   amc: {
     hero: {
       eyebrow: "FIRE SAFETY AMC",
-      title: "Keep your fire protection ready,",
-      accent: "every day.",
+      title: "Fire safety AMC Chennai",
+      accent: "for dependable protection.",
       description:
-        "Planned fire safety maintenance that helps keep your equipment reliable, compliant and ready for emergencies.",
+        "Aulukya provides planned inspection, testing, maintenance and servicing for essential fire safety equipment in Chennai.",
       image: "/fire-safety-amc-hero.png",
       imageAlt: "Technician maintaining fire safety equipment",
     },
@@ -626,7 +626,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       eyebrow: "FIRE SAFETY MAINTENANCE",
       title: "Ongoing care for dependable fire protection.",
       description:
-        "Our AMC support helps businesses maintain essential fire safety equipment through planned inspections, servicing and responsive support.",
+        "Our fire safety maintenance in Chennai helps businesses care for essential equipment through planned inspections, testing, servicing and AMC support.",
       image: "/fire-safety-amc-maintenance.png",
       imageAlt: "Planned fire equipment maintenance",
       highlights: highlights([
@@ -740,24 +740,24 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       items: [
         {
           title: "Extinguishers",
-          text: "Planned inspection and servicing for workplace extinguishers.",
+          text: "Fire extinguisher AMC in Chennai with planned inspection, maintenance and servicing.",
           image: "/images/amc-extinguishers.png",
         },
         {
           title: "Alarm Systems",
-          text: "Testing and maintenance support for detection and warning equipment.",
+          text: "Fire alarm AMC in Chennai with testing and maintenance support for detection and warning equipment.",
           image: "/images/amc-alarm-systems.png",
         },
         {
           title: "Hydrant Systems",
-          text: "Routine checks and servicing for hydrant equipment and components.",
+          text: "Fire hydrant AMC in Chennai with routine inspection, maintenance and servicing for hydrant equipment and components.",
           image: "/images/amc-hydrant-systems.png",
         },
       ],
     },
     faqs: [
       {
-        question: "What does a fire safety AMC include?",
+        question: "What does a fire safety AMC in Chennai include?",
         answer:
           "The scope can include planned inspections, testing, preventive maintenance, documentation and service support for agreed equipment.",
       },

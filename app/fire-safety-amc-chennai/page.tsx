@@ -3,8 +3,8 @@ import { pageMetadata } from "@/lib/site-data"
 import { detailedServicePages } from "@/lib/detailed-service-pages"
 
 export const metadata = pageMetadata(
-  "Fire Safety AMC in Chennai | Aulukya",
-  "Aulukya provides Fire Safety AMC support for fire extinguishers, alarm systems, hydrant systems, and safety equipment.",
+  "Fire Safety AMC Chennai | Aulukya",
+  "Aulukya provides fire safety AMC Chennai services, including inspection, testing, servicing, and maintenance for extinguishers, alarms, and hydrants.",
   "/fire-safety-amc-chennai"
 )
 
