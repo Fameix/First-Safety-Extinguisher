@@ -357,7 +357,7 @@ export default function Page() {
                       href={service.href}
                       className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-red-400 hover:text-red-300"
                     >
-                      Explore service{" "}
+                      {service.title}{" "}
                       <ArrowRight
                         className="size-4 transition-transform group-hover:translate-x-1"
                         aria-hidden="true"
