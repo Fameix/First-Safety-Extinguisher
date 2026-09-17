@@ -3,8 +3,8 @@ import { pageMetadata } from "@/lib/site-data"
 import { detailedServicePages } from "@/lib/detailed-service-pages"
 
 export const metadata = pageMetadata(
-  "Safety PPE Supplier in Chennai | Aulukya",
-  "Aulukya supports workplace safety PPE requirements for businesses and organizations in Chennai.",
+  "Safety PPE Supplier Chennai | Aulukya",
+  "Aulukya is a safety PPE supplier in Chennai, supplying workplace and industrial safety equipment for business requirements.",
   "/safety-ppe-chennai"
 )
 

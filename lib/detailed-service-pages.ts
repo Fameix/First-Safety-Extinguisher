@@ -435,10 +435,10 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
   ppe: {
     hero: {
       eyebrow: "SAFETY PPE",
-      title: "The right protection for every working",
-      accent: "environment.",
+      title: "Safety PPE supplier Chennai",
+      accent: "for every workplace.",
       description:
-        "Workplace safety PPE selected around your people, operations and specific workplace risks.",
+        "Aulukya supplies workplace safety PPE selected around your people, operations and specific workplace risks.",
       image: "/safety-ppe-hero-banner.png",
       imageAlt: "Personal protective equipment for workplace safety",
     },
@@ -446,7 +446,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       eyebrow: "WORKPLACE PROTECTION",
       title: "Practical PPE for safer everyday work.",
       description:
-        "We help businesses identify and supply suitable personal protective equipment based on workplace activities, hazards and safety requirements.",
+        "As a PPE supplier in Chennai, we help businesses identify and source suitable personal protective equipment based on workplace activities, hazards and safety requirements.",
       image: "/workplace-protection-ppe.png",
       imageAlt: "Workplace personal protective equipment",
       highlights: highlights([
@@ -460,7 +460,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       eyebrow: "OUR PPE SOLUTIONS",
       title: "Protection selected for the work your team does.",
       description:
-        "From head to foot, we help supply practical PPE suited to your environment.",
+        "Our industrial safety equipment in Chennai covers practical head, eye, hand, foot and body protection suited to your work environment.",
       items: cards([
         [
           "Head Protection",
@@ -556,7 +556,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
       eyebrow: "PROTECTION CATEGORIES",
       title: "The right equipment for the right risk.",
       description:
-        "We help select practical protection across the everyday needs of your workplace.",
+        "We help businesses select workplace safety equipment in Chennai across the everyday needs of their teams.",
       items: features(images.ppe, [
         [
           "Head & Eye",
@@ -609,7 +609,7 @@ export const detailedServicePages: Record<string, DetailedServiceContent> = {
     cta: {
       title: "Need the right PPE for your workplace?",
       description:
-        "Talk to our team about practical safety equipment solutions.",
+        "Enquire with a safety equipment supplier in Chennai about practical PPE for your workplace requirements.",
     },
   },
   amc: {
