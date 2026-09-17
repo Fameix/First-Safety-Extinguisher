@@ -60,33 +60,99 @@ const services = [
 const whatWeDo = [
   {
     title: "Fire protection equipment",
-    description:
-      "Supply and support for extinguishers and other workplace fire safety equipment.",
+    description: (
+      <>
+        Supply and support for{" "}
+        <Link
+          href="/fire-extinguisher-services-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          fire extinguishers
+        </Link>{" "}
+        and other workplace fire safety equipment.
+      </>
+    ),
   },
   {
     title: "System installation",
-    description:
-      "Professional installation for fire alarm, hydrant and related protection systems.",
+    description: (
+      <>
+        Professional installation for{" "}
+        <Link
+          href="/fire-alarm-systems-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          fire alarm systems
+        </Link>
+        ,{" "}
+        <Link
+          href="/fire-hydrant-systems-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          fire hydrant systems
+        </Link>{" "}
+        and related protection systems.
+      </>
+    ),
   },
   {
     title: "Maintenance and AMC",
-    description:
-      "Ongoing servicing that keeps your systems ready and compliant over time.",
+    description: (
+      <>
+        Ongoing{" "}
+        <Link
+          href="/fire-safety-amc-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          fire safety AMC
+        </Link>{" "}
+        servicing that keeps your systems ready and compliant over time.
+      </>
+    ),
   },
   {
     title: "Audits and compliance",
-    description:
-      "Practical fire safety audits and support for workplace compliance requirements.",
+    description: (
+      <>
+        Practical{" "}
+        <Link
+          href="/fire-audits-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          fire safety audits
+        </Link>{" "}
+        and support for workplace compliance requirements.
+      </>
+    ),
   },
   {
     title: "Fire NOC consulting",
-    description:
-      "Guidance to help clients navigate fire NOC needs with greater clarity.",
+    description: (
+      <>
+        <Link
+          href="/fire-noc-consulting-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          Fire NOC consulting
+        </Link>{" "}
+        guidance to help clients navigate approval needs with greater clarity.
+      </>
+    ),
   },
   {
     title: "Safety PPE",
-    description:
-      "Reliable protective equipment that supports safer work environments.",
+    description: (
+      <>
+        Reliable{" "}
+        <Link
+          href="/safety-ppe-chennai"
+          className="font-bold text-zinc-950 no-underline"
+        >
+          safety PPE
+        </Link>{" "}
+        that supports safer work environments.
+      </>
+    ),
   },
   {
     title: "Emergency readiness",
